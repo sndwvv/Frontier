@@ -6,31 +6,55 @@
 //
 
 import XCTest
+import Combine
+
 @testable import Frontier
 
 class FrontierTests: XCTestCase {
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        subscriptions = []
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    var subscriptions = Set<AnyCancellable>()
+    
+    func test_fetch_articles_success() {
+        let success = Result<[Article], APIError>.success([Article.example(), Article.exampleTwo()])
+        let fetcher = NewsArticleFetcher(service: APIMockService(result: success))
+        let promise = expectation(description: "fetching articles")
+        
+        fetcher.$articles.sink { articles in
+            if articles.count > 0 {
+                promise.fulfill()
+            }
         }
+        .store(in: &subscriptions)
+        wait(for: [promise], timeout: 2)
+    }
+    
+    func test_fetch_articles_error() {
+        let failure = Result<[Article], APIError>.failure(.badURL)
+        let fetcher = NewsArticleFetcher(service: APIMockService(result: failure))
+        let promise = expectation(description: "show error message")
+        
+        fetcher.$articles.sink { articles in
+            if articles.count > 0 {
+                XCTFail()
+            }
+        }
+        .store(in: &subscriptions)
+        
+        fetcher.$errorMessage.sink { message in
+            if message != nil {
+                promise.fulfill()
+            }
+        }
+        .store(in: &subscriptions)
+        wait(for: [promise], timeout: 2)
     }
 
 }
