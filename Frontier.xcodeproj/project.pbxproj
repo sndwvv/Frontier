@@ -14,15 +14,17 @@
 		1E1218AE28699C1500328484 /* LaunchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AD28699C1500328484 /* LaunchRowView.swift */; };
 		1E1218B02869C47900328484 /* LaunchMissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */; };
 		1E40DDC4286ACF170038039F /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDC3286ACF170038039F /* NewsWebView.swift */; };
-		1E40DDC9286BFDC90038039F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDC8286BFDC90038039F /* Color.swift */; };
+		1E40DDC9286BFDC90038039F /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDC8286BFDC90038039F /* Color+Ext.swift */; };
 		1E40DDCB286C0C2B0038039F /* LaunchStatusCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDCA286C0C2B0038039F /* LaunchStatusCardView.swift */; };
 		1E40DDCD286C0E710038039F /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDCC286C0E710038039F /* CardViewModifier.swift */; };
-		1E40DDCF286C0EB20038039F /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDCE286C0EB20038039F /* View.swift */; };
+		1E40DDCF286C0EB20038039F /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDCE286C0EB20038039F /* View+Ext.swift */; };
 		1E40DDD1286C17B60038039F /* LaunchCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD0286C17B60038039F /* LaunchCountdownView.swift */; };
 		1E40DDD3286C468D0038039F /* LaunchListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD2286C468D0038039F /* LaunchListLoadingView.swift */; };
 		1E40DDD6286C768B0038039F /* SettingsTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD5286C768B0038039F /* SettingsTabCoordinator.swift */; };
 		1E40DDD8286C76A90038039F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD7286C76A90038039F /* SettingsView.swift */; };
 		1E40DDDC286D8E110038039F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDDB286D8E110038039F /* WebViewController.swift */; };
+		1EACE0E528706C530051B61D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E428706C530051B61D /* String+Ext.swift */; };
+		1EACE0E728706CCA0051B61D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E628706CCA0051B61D /* RoundedCorner.swift */; };
 		1EAFDF71286AAE7F00998ADA /* LaunchRocketCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF70286AAE7F00998ADA /* LaunchRocketCardView.swift */; };
 		1EAFDF73286AAEB600998ADA /* LaunchPadCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */; };
 		1EAFDF75286AB65D00998ADA /* LaunchServiceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF74286AB65D00998ADA /* LaunchServiceCardView.swift */; };
@@ -83,15 +85,17 @@
 		1E1218AD28699C1500328484 /* LaunchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRowView.swift; sourceTree = "<group>"; };
 		1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchMissionCardView.swift; sourceTree = "<group>"; };
 		1E40DDC3286ACF170038039F /* NewsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebView.swift; sourceTree = "<group>"; };
-		1E40DDC8286BFDC90038039F /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		1E40DDC8286BFDC90038039F /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		1E40DDCA286C0C2B0038039F /* LaunchStatusCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStatusCardView.swift; sourceTree = "<group>"; };
 		1E40DDCC286C0E710038039F /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
-		1E40DDCE286C0EB20038039F /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		1E40DDCE286C0EB20038039F /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		1E40DDD0286C17B60038039F /* LaunchCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView.swift; sourceTree = "<group>"; };
 		1E40DDD2286C468D0038039F /* LaunchListLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListLoadingView.swift; sourceTree = "<group>"; };
 		1E40DDD5286C768B0038039F /* SettingsTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTabCoordinator.swift; sourceTree = "<group>"; };
 		1E40DDD7286C76A90038039F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1E40DDDB286D8E110038039F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		1EACE0E428706C530051B61D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		1EACE0E628706CCA0051B61D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		1EAFDF70286AAE7F00998ADA /* LaunchRocketCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRocketCardView.swift; sourceTree = "<group>"; };
 		1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadCardView.swift; sourceTree = "<group>"; };
 		1EAFDF74286AB65D00998ADA /* LaunchServiceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceCardView.swift; sourceTree = "<group>"; };
@@ -159,9 +163,9 @@
 		1E40DDC7286BFDB10038039F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1E40DDC8286BFDC90038039F /* Color.swift */,
-				1E40DDCE286C0EB20038039F /* View.swift */,
-				1E40DDCC286C0E710038039F /* CardViewModifier.swift */,
+				1E40DDC8286BFDC90038039F /* Color+Ext.swift */,
+				1E40DDCE286C0EB20038039F /* View+Ext.swift */,
+				1EACE0E428706C530051B61D /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,6 +319,8 @@
 				1EB24CFB2864606400229E9F /* StretchyHeaderImageView.swift */,
 				1EAFDF76286ABFC000998ADA /* TagView.swift */,
 				1E40DDDB286D8E110038039F /* WebViewController.swift */,
+				1E40DDCC286C0E710038039F /* CardViewModifier.swift */,
+				1EACE0E628706CCA0051B61D /* RoundedCorner.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -455,7 +461,7 @@
 			files = (
 				1ED3EEB22862DC0D00B4FC75 /* NewsRowView.swift in Sources */,
 				1ED3EEA62862D08E00B4FC75 /* Article.swift in Sources */,
-				1E40DDCF286C0EB20038039F /* View.swift in Sources */,
+				1E40DDCF286C0EB20038039F /* View+Ext.swift in Sources */,
 				1ED3EE8B2862BC0700B4FC75 /* ApplicationCoordinator.swift in Sources */,
 				1E40DDCD286C0E710038039F /* CardViewModifier.swift in Sources */,
 				1E40DDCB286C0C2B0038039F /* LaunchStatusCardView.swift in Sources */,
@@ -467,10 +473,11 @@
 				1EB24CFC2864606400229E9F /* StretchyHeaderImageView.swift in Sources */,
 				1EAFDF73286AAEB600998ADA /* LaunchPadCardView.swift in Sources */,
 				1E1218AA2865D8A700328484 /* LaunchErrorView.swift in Sources */,
-				1E40DDC9286BFDC90038039F /* Color.swift in Sources */,
+				1E40DDC9286BFDC90038039F /* Color+Ext.swift in Sources */,
 				1ED3EEAE2862D5E800B4FC75 /* NewsErrorView.swift in Sources */,
 				1EAFDF77286ABFC000998ADA /* TagView.swift in Sources */,
 				1E1218AE28699C1500328484 /* LaunchRowView.swift in Sources */,
+				1EACE0E528706C530051B61D /* String+Ext.swift in Sources */,
 				1E40DDD6286C768B0038039F /* SettingsTabCoordinator.swift in Sources */,
 				1ED3EE8E2862BC8C00B4FC75 /* MainCoordinator.swift in Sources */,
 				1EAFDF71286AAE7F00998ADA /* LaunchRocketCardView.swift in Sources */,
@@ -482,6 +489,7 @@
 				1E1218B02869C47900328484 /* LaunchMissionCardView.swift in Sources */,
 				1E40DDDC286D8E110038039F /* WebViewController.swift in Sources */,
 				1ED3EEAC2862D5BC00B4FC75 /* NewsLoadingView.swift in Sources */,
+				1EACE0E728706CCA0051B61D /* RoundedCorner.swift in Sources */,
 				1ED3EE9F2862CB3700B4FC75 /* APIService.swift in Sources */,
 				1ED3EE9A2862BF8900B4FC75 /* NewsView.swift in Sources */,
 				1ED3EEB92862DFD300B4FC75 /* ImageLoader.swift in Sources */,

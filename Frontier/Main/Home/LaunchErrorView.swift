@@ -20,7 +20,7 @@ struct LaunchErrorView: View {
             Button {
                 launchFetcher.fetchLaunches()
             } label: {
-                Text("Retry")
+                Text("Try Again")
             }
         }
     }
