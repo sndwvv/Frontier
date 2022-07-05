@@ -20,30 +20,6 @@ struct LaunchRowView: View {
                 .font(.system(size: 20))
                 .padding()
         }
-        
-        
-//        LazyVStack(alignment: .leading) {
-//            ImageLoadingView(url: launch.image)
-//                .frame(height: 200)
-//                .clipped()
-//            Text("\(launch.name ?? "NA")")
-//                .font(.system(size: 20))
-//                .frame(maxWidth: .infinity)
-//                .multilineTextAlignment(.leading)
-//                .fixedSize(horizontal: true, vertical: false)
-//                .frame(width: 0, alignment: .leading)
-//            Text(launch.status?.name ?? "Launch Status")
-//                .multilineTextAlignment(.leading)
-//                .frame(maxWidth: .infinity)
-//                .fixedSize(horizontal: true, vertical: false)
-//                .frame(width: 0, alignment: .leading)
-//            Text(launch.status?.description ?? "Launch Description")
-//                .multilineTextAlignment(.leading)
-//                .frame(maxWidth: .infinity)
-//                .fixedSize(horizontal: true, vertical: false)
-//                .frame(width: 0, alignment: .leading)
-//        }
-//        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

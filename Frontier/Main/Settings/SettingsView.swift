@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @AppStorage("isDarkMode") private var isDarkMode = false
+
     var body: some View {
-        Text("Settings")
+        Form {
+            Toggle("Dark Mode", isOn: $isDarkMode)
+        }
+        .environment(\.colorScheme, isDarkMode ? .dark : .light)
     }
+
 }
 
 struct SettingsView_Previews: PreviewProvider {
