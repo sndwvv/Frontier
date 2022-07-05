@@ -12,20 +12,34 @@ struct LaunchRowView: View {
     let launch: Launch
     
     var body: some View {
-        VStack {
+        HStack {
             ImageLoadingView(url: launch.image)
-                .frame(height: 200)       
+                .frame(width: 100, height: 100, alignment: .center)
+                .cornerRadius(10)
                 .clipped()
-            Text("\(launch.name ?? "NA")")
-                .font(.system(size: 20))
-                .padding()
+            VStack(spacing: 8) {
+                Text(launch.name ?? "")
+                    .font(.headline)
+                    .foregroundColor(.primaryText)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                if let launchTime = launch.net {
+                    Text(launchTime.readableFormat())
+                        .font(.footnote)
+                        .foregroundColor(.secondaryText)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.trailing, 8)
         }
+        .frame(height: 100)
     }
 }
 
 struct LaunchRowView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchRowView(launch: Launch.example())
-            .previewLayout(.fixed(width: 375, height: 300))
+            .previewLayout(.fixed(width: 375, height: 100))
     }
 }

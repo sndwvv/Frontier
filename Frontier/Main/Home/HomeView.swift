@@ -17,11 +17,21 @@ struct HomeView: View {
                 LaunchListLoadingView()
             } else if launchFetcher.errorMessage != nil {
                 LaunchErrorView(launchFetcher: launchFetcher)
-            } else {
-                LaunchListView(launches: launchFetcher.launches)
+            } else if launchFetcher.launches.count == 0 {
+                LaunchEmptyView(launchFetcher: launchFetcher)
+            } else if let latestLaunch = launchFetcher.launches.first {
+                ScrollView {
+                    HomeLaunchView(launch: latestLaunch)
+                        .frame(height: 500)
+                    LaunchListView(launches: launchFetcher.launches)
+                }
             }
         }
-        .navigationTitle("Upcoming Launches")
+        .navigationTitle("Upcoming")
+    }
+    
+    var fullScreenSize: CGSize {
+        return UIScreen.main.bounds.size
     }
 }
 

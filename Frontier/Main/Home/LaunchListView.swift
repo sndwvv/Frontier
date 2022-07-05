@@ -2,7 +2,7 @@
 //  LaunchListView.swift
 //  Frontier
 //
-//  Created by Songyee Park on 2022/06/27.
+//  Created by Songyee Park on 2022/07/05.
 //
 
 import SwiftUI
@@ -12,29 +12,23 @@ struct LaunchListView: View {
     let launches: [Launch]
     
     var body: some View {
-        TabView {
-            ForEach(launches) { launch in
-                NavigationLink {
-                    LaunchDetailView(launch: launch)
-                } label: {
-                    LaunchView(launch: launch)
-                        .padding(.bottom, 24)
+        ScrollView {
+            VStack {
+                ForEach(launches) { launch in
+                    NavigationLink {
+                        LaunchDetailView(launch: launch)
+                    } label: {
+                        LaunchRowView(launch: launch)
+                    }
                 }
-            }
+            }.padding(.horizontal, 8)
         }
-        .tabViewStyle(PageTabViewStyle())
         .background(Color.mainBackground)
     }
-    
-    var screenWidth: CGFloat {
-        return UIScreen.main.bounds.width
-    }
-    
 }
 
 struct LaunchListView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchListView(launches: [Launch.example(), Launch.example()])
-            .previewInterfaceOrientation(.portrait)
     }
 }

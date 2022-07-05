@@ -28,4 +28,8 @@ class ApplicationCoordinator: Coordinator {
         window.rootViewController = mainCoordinator.rootViewController
     }
     
+    private func goToOnboarding() {
+        // 
+    }
+    
 }

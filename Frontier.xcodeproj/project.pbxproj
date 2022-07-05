@@ -10,7 +10,7 @@
 		1E1218A62865924300328484 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218A52865924300328484 /* LaunchView.swift */; };
 		1E1218A82865D63F00328484 /* LaunchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218A72865D63F00328484 /* LaunchDetailView.swift */; };
 		1E1218AA2865D8A700328484 /* LaunchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218A92865D8A700328484 /* LaunchErrorView.swift */; };
-		1E1218AC2869966800328484 /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AB2869966800328484 /* LaunchListView.swift */; };
+		1E1218AC2869966800328484 /* HomeLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AB2869966800328484 /* HomeLaunchView.swift */; };
 		1E1218AE28699C1500328484 /* LaunchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AD28699C1500328484 /* LaunchRowView.swift */; };
 		1E1218B02869C47900328484 /* LaunchMissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */; };
 		1E40DDC4286ACF170038039F /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDC3286ACF170038039F /* NewsWebView.swift */; };
@@ -25,6 +25,9 @@
 		1E40DDDC286D8E110038039F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDDB286D8E110038039F /* WebViewController.swift */; };
 		1EACE0E528706C530051B61D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E428706C530051B61D /* String+Ext.swift */; };
 		1EACE0E728706CCA0051B61D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E628706CCA0051B61D /* RoundedCorner.swift */; };
+		1EACE0F12873E5210051B61D /* LaunchDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0F02873E5210051B61D /* LaunchDetailed.swift */; };
+		1EACE0FA2873F83A0051B61D /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0F92873F83A0051B61D /* LaunchListView.swift */; };
+		1EACE0FC287403730051B61D /* LaunchEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0FB287403730051B61D /* LaunchEmptyView.swift */; };
 		1EAFDF71286AAE7F00998ADA /* LaunchRocketCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF70286AAE7F00998ADA /* LaunchRocketCardView.swift */; };
 		1EAFDF73286AAEB600998ADA /* LaunchPadCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */; };
 		1EAFDF75286AB65D00998ADA /* LaunchServiceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF74286AB65D00998ADA /* LaunchServiceCardView.swift */; };
@@ -81,7 +84,7 @@
 		1E1218A52865924300328484 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		1E1218A72865D63F00328484 /* LaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailView.swift; sourceTree = "<group>"; };
 		1E1218A92865D8A700328484 /* LaunchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchErrorView.swift; sourceTree = "<group>"; };
-		1E1218AB2869966800328484 /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
+		1E1218AB2869966800328484 /* HomeLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLaunchView.swift; sourceTree = "<group>"; };
 		1E1218AD28699C1500328484 /* LaunchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRowView.swift; sourceTree = "<group>"; };
 		1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchMissionCardView.swift; sourceTree = "<group>"; };
 		1E40DDC3286ACF170038039F /* NewsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebView.swift; sourceTree = "<group>"; };
@@ -96,6 +99,9 @@
 		1E40DDDB286D8E110038039F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1EACE0E428706C530051B61D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		1EACE0E628706CCA0051B61D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		1EACE0F02873E5210051B61D /* LaunchDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailed.swift; sourceTree = "<group>"; };
+		1EACE0F92873F83A0051B61D /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
+		1EACE0FB287403730051B61D /* LaunchEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEmptyView.swift; sourceTree = "<group>"; };
 		1EAFDF70286AAE7F00998ADA /* LaunchRocketCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRocketCardView.swift; sourceTree = "<group>"; };
 		1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadCardView.swift; sourceTree = "<group>"; };
 		1EAFDF74286AB65D00998ADA /* LaunchServiceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceCardView.swift; sourceTree = "<group>"; };
@@ -259,9 +265,10 @@
 			children = (
 				1ED3EE902862BCDB00B4FC75 /* HomeTabCoordinator.swift */,
 				1ED3EE922862BE8600B4FC75 /* HomeView.swift */,
-				1E1218AB2869966800328484 /* LaunchListView.swift */,
-				1E1218A52865924300328484 /* LaunchView.swift */,
+				1E1218AB2869966800328484 /* HomeLaunchView.swift */,
+				1EACE0F92873F83A0051B61D /* LaunchListView.swift */,
 				1E1218AD28699C1500328484 /* LaunchRowView.swift */,
+				1E1218A52865924300328484 /* LaunchView.swift */,
 				1E1218A72865D63F00328484 /* LaunchDetailView.swift */,
 				1E40DDD0286C17B60038039F /* LaunchCountdownView.swift */,
 				1E40DDCA286C0C2B0038039F /* LaunchStatusCardView.swift */,
@@ -271,6 +278,7 @@
 				1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */,
 				1EB24D02286575C900229E9F /* LaunchFetcher.swift */,
 				1E1218A92865D8A700328484 /* LaunchErrorView.swift */,
+				1EACE0FB287403730051B61D /* LaunchEmptyView.swift */,
 				1E40DDD2286C468D0038039F /* LaunchListLoadingView.swift */,
 			);
 			path = Home;
@@ -308,6 +316,7 @@
 			children = (
 				1ED3EEA52862D08E00B4FC75 /* Article.swift */,
 				1EB24CFD2864697100229E9F /* Launch.swift */,
+				1EACE0F02873E5210051B61D /* LaunchDetailed.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,6 +472,7 @@
 				1ED3EEA62862D08E00B4FC75 /* Article.swift in Sources */,
 				1E40DDCF286C0EB20038039F /* View+Ext.swift in Sources */,
 				1ED3EE8B2862BC0700B4FC75 /* ApplicationCoordinator.swift in Sources */,
+				1EACE0FC287403730051B61D /* LaunchEmptyView.swift in Sources */,
 				1E40DDCD286C0E710038039F /* CardViewModifier.swift in Sources */,
 				1E40DDCB286C0C2B0038039F /* LaunchStatusCardView.swift in Sources */,
 				1E1218A62865924300328484 /* LaunchView.swift in Sources */,
@@ -492,6 +502,7 @@
 				1EACE0E728706CCA0051B61D /* RoundedCorner.swift in Sources */,
 				1ED3EE9F2862CB3700B4FC75 /* APIService.swift in Sources */,
 				1ED3EE9A2862BF8900B4FC75 /* NewsView.swift in Sources */,
+				1EACE0FA2873F83A0051B61D /* LaunchListView.swift in Sources */,
 				1ED3EEB92862DFD300B4FC75 /* ImageLoader.swift in Sources */,
 				1ED3EE962862BF6600B4FC75 /* NewsTabCoordinator.swift in Sources */,
 				1EB24CFE2864697100229E9F /* Launch.swift in Sources */,
@@ -501,7 +512,8 @@
 				1ED3EE912862BCDB00B4FC75 /* HomeTabCoordinator.swift in Sources */,
 				1EAFDF75286AB65D00998ADA /* LaunchServiceCardView.swift in Sources */,
 				1ED3EE582862BB3D00B4FC75 /* AppDelegate.swift in Sources */,
-				1E1218AC2869966800328484 /* LaunchListView.swift in Sources */,
+				1EACE0F12873E5210051B61D /* LaunchDetailed.swift in Sources */,
+				1E1218AC2869966800328484 /* HomeLaunchView.swift in Sources */,
 				1E40DDC4286ACF170038039F /* NewsWebView.swift in Sources */,
 				1ED3EEB02862D7EC00B4FC75 /* NewsListView.swift in Sources */,
 				1ED3EE5A2862BB3D00B4FC75 /* SceneDelegate.swift in Sources */,

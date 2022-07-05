@@ -13,11 +13,23 @@ extension String {
         let dateFormatter = ISO8601DateFormatter()
         dateFormatter.formatOptions.insert(.withFractionalSeconds)
         guard let date = dateFormatter.date(from: self) else {
-            return "error"
+            return "date error"
         }
         let relativeFormatter = RelativeDateTimeFormatter()
         relativeFormatter.unitsStyle = .full
         return relativeFormatter.localizedString(for: date, relativeTo: Date())
+    }
+    
+    func readableFormat() -> String {
+        let dateFormatterGet = ISO8601DateFormatter()
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM d, yyyy"
+
+        if let date = dateFormatterGet.date(from: self) {
+            return dateFormatterPrint.string(from: date)
+        } else {
+            return "date error"
+        }
     }
     
 }

@@ -45,7 +45,9 @@ struct Launch: Codable, Identifiable {
                 configuration: Rocket.Configuration(
                     id: 26,
                     url: "https://ll.thespacedevs.com/2.2.0/config/launcher/26/",
-                    name: "Electron")
+                    name: "Electron",
+                    description: "Electron is a two-stage orbital expendable launch vehicle (with an optional third stage) developed by the American aerospace company Rocket Lab. Electron is a small-lift launch vehicle designed to launch small satellites and cubesats to sun-synchronous orbit and low earth orbit. The Electron is the first orbital class rocket to use electric-pump-fed engines, powered by the 9 Rutherford engines on the first stage."
+                )
             ),
             mission: Mission(
                 id: 1085,
@@ -105,6 +107,28 @@ struct LaunchServiceProvider: Codable, Identifiable {
     let url: String?
     let name: String?
     let type: String?
+    
+//    let countryCode: String?
+//    let description: String?
+//    let administrator: String?
+//    let foundingYear: String?
+//    let launchers: String?
+//    let spacecraft: String?
+//    let launchLibraryUrl: String?
+//
+//    let totalLaunchCount: Int?
+//    let consecutiveSuccessfulLaunches: Int?
+//    let successfulLaunches: Int?
+//    let failedLaunches: Int?
+//    let pendingLaunches: Int?
+//    let failedLandings: Int?
+//    let attemptedLandings: Int?
+//
+//    let infoUrl: String?
+//    let wikiUrl: String?
+//    let logoUrl: String?
+//    let imageUrl: String?
+//    let nationUrl: String?
 }
 
 struct Rocket: Codable, Identifiable {
@@ -115,6 +139,7 @@ struct Rocket: Codable, Identifiable {
         let id: Int
         let url: String?
         let name: String?
+        let description: String?
     }
 }
 

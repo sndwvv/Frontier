@@ -54,7 +54,7 @@ struct APIService: APIServiceProtocol {
         }
     }
     
-    var launchLibaryBaseURL: String {
+    private var launchLibaryBaseURL: String {
         #if DEBUG
         return "https://lldev.thespacedevs.com/2.2.0/"
         #else
@@ -62,7 +62,7 @@ struct APIService: APIServiceProtocol {
         #endif
     }
     
-    var spaceFlightNewsBaseURL: String {
+    private var spaceFlightNewsBaseURL: String {
         return "https://api.spaceflightnewsapi.net/v3/"
     }
     
