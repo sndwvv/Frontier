@@ -5,11 +5,11 @@
 //  Created by Songyee Park on 2022/06/22.
 //
 
-import Foundation
+import SwiftUI
 
-struct APIService: APIServiceProtocol {
+struct APIService {
     
-    private func fetch<T: Decodable>(_ type: T.Type, url: String, completion: @escaping (Result<T, APIError>) -> Void) {
+    static func fetch<T: Decodable>(_ type: T.Type, url: String, completion: @escaping (Result<T, APIError>) -> Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.badURL))
             return
@@ -33,37 +33,41 @@ struct APIService: APIServiceProtocol {
         .resume()
     }
     
+}
+
+struct NewsAPIService: NewsAPIServiceProtocol {
+    
     func fetchLatestNews(completion: @escaping (Result<[Article], APIError>) -> Void) {
-        let url = spaceFlightNewsBaseURL + "articles?_limit=30"
-        fetch([Article].self, url: url) { result in
+        let url = APIPath.spaceFlightNewsBaseURL + "articles?_limit=30"
+        APIService.fetch([Article].self, url: url) { result in
             completion(result)
         }
     }
     
-    func fetchLaunches(completion: @escaping (Result<LaunchSerializer, APIError>) -> Void) {
-        let url = launchLibaryBaseURL + "launch/"
-        fetch(LaunchSerializer.self, url: url) { result in
-            completion(result)
-        }
-    }
+}
+
+struct APILaunchService: LaunchListAPIServiceProtocol, LaunchDetailAPIServiceProtocol {
     
     func fetchUpcomingLaunches(completion: @escaping (Result<LaunchSerializer, APIError>) -> Void) {
-        let url = launchLibaryBaseURL + "launch/upcoming/?limit=10"
-        fetch(LaunchSerializer.self, url: url) { result in
+        let url = APIPath.launchLibaryBaseURL + "launch/upcoming/?limit=10"
+        APIService.fetch(LaunchSerializer.self, url: url) { result in
             completion(result)
         }
     }
     
-    private var launchLibaryBaseURL: String {
-        #if DEBUG
-        return "https://lldev.thespacedevs.com/2.2.0/"
-        #else
-        return "https://ll.thespacedevs.com/2.2.0/"
-        #endif
+    // TEST
+    func fetchUpcomingLaunches() async throws -> LaunchSerializer {
+        return try await withCheckedThrowingContinuation({ continuation in
+            self.fetchUpcomingLaunches { result in
+                continuation.resume(with: result)
+            }
+        })
     }
     
-    private var spaceFlightNewsBaseURL: String {
-        return "https://api.spaceflightnewsapi.net/v3/"
+    func fetchLaunchDetail(id: String, completion: @escaping (Result<Launch, APIError>) -> Void) {
+        let url = APIPath.launchLibaryBaseURL + "launch/\(id)"
+        APIService.fetch(Launch.self, url: url) { result in
+            completion(result)
+        }
     }
-    
 }

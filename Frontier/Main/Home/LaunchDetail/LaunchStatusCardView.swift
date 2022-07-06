@@ -21,7 +21,7 @@ struct LaunchStatusCardView: View {
                     .foregroundColor(Color.secondaryText)
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                     .padding(.top, 8)
-                TagView(text: status.abbrev ?? "")
+                TagView(text: status.abbrev ?? "", backgroundColor: .blue)
             }
 
             Text(status.name ?? "")

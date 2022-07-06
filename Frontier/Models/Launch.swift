@@ -20,6 +20,8 @@ struct Launch: Codable, Identifiable {
     let pad: Pad?
     let webcastLive: Bool?
     let image: String?
+    let infoURLs: [InfoURL]?
+    let vidURLs: [VidURL]?
     
     static func example() -> Launch {
         return Launch(
@@ -82,8 +84,12 @@ struct Launch: Codable, Identifiable {
                 mapImage: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_185_20200803143540.jpg",
                 totalLaunchCount: 1
             ),
-            webcastLive: false,
-            image: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/electron_image_20190705175640.jpeg"
+            webcastLive: true,
+            image: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/electron_image_20190705175640.jpeg",
+            infoURLs: [
+                // InfoURL(priority: 10, title: <#T##String?#>, description: <#T##String?#>, featureImage: <#T##String?#>, url: <#T##String?#>)
+            ],
+            vidURLs: []
         )
     }
 }

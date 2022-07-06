@@ -21,7 +21,7 @@ struct LaunchMissionCardView: View {
                     .foregroundColor(Color.secondaryText)
                     .frame(maxWidth: .infinity, alignment: .topLeading)
                     .padding(.top, 8)
-                TagView(text: mission.type ?? "")
+                TagView(text: mission.type ?? "", backgroundColor: .blue)
             }
                 
             Text(mission.description ?? "")

@@ -14,9 +14,9 @@ class NewsArticleFetcher: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     
-    let service: APIServiceProtocol
+    let service: NewsAPIServiceProtocol
     
-    init(service: APIServiceProtocol = APIService()) {
+    init(service: NewsAPIServiceProtocol = NewsAPIService()) {
         self.service = service
         fetchArticles()
     }

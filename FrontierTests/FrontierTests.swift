@@ -24,7 +24,7 @@ class FrontierTests: XCTestCase {
     
     func test_fetch_articles_success() {
         let success = Result<[Article], APIError>.success([Article.example(), Article.exampleTwo()])
-        let fetcher = NewsArticleFetcher(service: APIMockService(result: success))
+        let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: success))
         let promise = expectation(description: "fetching articles")
         
         fetcher.$articles.sink { articles in
@@ -38,7 +38,7 @@ class FrontierTests: XCTestCase {
     
     func test_fetch_articles_error() {
         let failure = Result<[Article], APIError>.failure(.badURL)
-        let fetcher = NewsArticleFetcher(service: APIMockService(result: failure))
+        let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: failure))
         let promise = expectation(description: "show error message")
         
         fetcher.$articles.sink { articles in

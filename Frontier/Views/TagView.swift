@@ -10,6 +10,7 @@ import SwiftUI
 struct TagView: View {
     
     let text: String
+    let backgroundColor: Color
     
     var body: some View {
         HStack {
@@ -17,7 +18,7 @@ struct TagView: View {
         }
         .padding(.horizontal, 6)
         .padding(.vertical, 2)
-        .background(Color.blue)
+        .background(backgroundColor)
         .foregroundColor(.white)
         .cornerRadius(6)
         .font(.system(size: 12).bold())
@@ -26,7 +27,7 @@ struct TagView: View {
 
 struct TagView_Previews: PreviewProvider {
     static var previews: some View {
-        TagView(text: "Test Text")
+        TagView(text: "Test Text", backgroundColor: .blue)
             .previewLayout(.sizeThatFits)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  LaunchListLoadingView.swift
+//  LaunchLoadingView.swift
 //  Frontier
 //
 //  Created by Songyee Park on 2022/06/29.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LaunchListLoadingView: View {
+struct LaunchLoadingView: View {
     var body: some View {
         VStack(spacing: 20) {
             Text("🚀")
@@ -19,8 +19,8 @@ struct LaunchListLoadingView: View {
     }
 }
 
-struct LaunchListLoadingView_Previews: PreviewProvider {
+struct LaunchLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchListLoadingView()
+        LaunchLoadingView()
     }
 }

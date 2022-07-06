@@ -14,7 +14,7 @@ class SettingsTabCoordinator: Coordinator {
     
     init() {
         rootViewController = UINavigationController()
-        rootViewController.navigationBar.prefersLargeTitles = false
+        rootViewController.navigationBar.prefersLargeTitles = true
         start()
     }
     

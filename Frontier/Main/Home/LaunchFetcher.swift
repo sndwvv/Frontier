@@ -10,18 +10,16 @@ import Combine
 
 class LaunchFetcher: ObservableObject {
     
-    @Published var launches: [Launch] = []
-    @Published var isLoading: Bool = false
-    @Published var errorMessage: String? = nil
+    let service: LaunchListAPIServiceProtocol
     
-    let service: APIServiceProtocol
-    
-    init(service: APIServiceProtocol = APIService()) {
+    init(service: LaunchListAPIServiceProtocol = APILaunchService()) {
         self.service = service
         fetchLaunches()
     }
     
-    private var cancellable: AnyCancellable?
+    @Published var launches: [Launch] = []
+    @Published var isLoading: Bool = false
+    @Published var errorMessage: String? = nil
     
     func fetchLaunches() {
         isLoading = true

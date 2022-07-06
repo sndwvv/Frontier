@@ -23,6 +23,74 @@ struct LaunchDetailed: Codable, Identifiable {
     
     let infoURLs: [InfoURL]?
     let vidURLs: [VidURL]?
+    
+    static func example() -> LaunchDetailed {
+        return LaunchDetailed(
+            id: "859bf952-b4c6-40fb-a7e7-ac12efc386b2",
+            url: "https://ll.thespacedevs.com/2.2.0/launch/859bf952-b4c6-40fb-a7e7-ac12efc386b2/",
+            name: "Electron | CAPSTONE",
+            status: LaunchStatus(
+                id: 1,
+                name: "Go for Launch",
+                abbrev: "Go",
+                description: "Current T-0 confirmed by official or reliable sources."
+            ),
+            lastUpdated: "2022-06-23T23:03:48Z",
+            net: "2022-06-30T09:50:00Z",
+            launchServiceProvider: LaunchServiceProvider(
+                id: 147,
+                url: "https://ll.thespacedevs.com/2.2.0/agencies/147/",
+                name: "Rocket Lab Ltd",
+                type: "Commercial"
+            ),
+            rocket: Rocket(
+                id: 2665,
+                configuration: Rocket.Configuration(
+                    id: 26,
+                    url: "https://ll.thespacedevs.com/2.2.0/config/launcher/26/",
+                    name: "Electron",
+                    description: "Electron is a two-stage orbital expendable launch vehicle (with an optional third stage) developed by the American aerospace company Rocket Lab. Electron is a small-lift launch vehicle designed to launch small satellites and cubesats to sun-synchronous orbit and low earth orbit. The Electron is the first orbital class rocket to use electric-pump-fed engines, powered by the 9 Rutherford engines on the first stage."
+                )
+            ),
+            mission: Mission(
+                id: 1085,
+                name: "CAPSTONE",
+                description: "CAPSTONE (Cislunar Autonomous Positioning System Technology Operations and Navigation Experiment) is a 12-U cubesat mission to test operations in near rectiliniar halo orbit around the Moon, which is to be used for the Lunar Gateway space station. Mission will verify the  near rectilinear halo orbit characteristics, spacecraft-to-spacecraft navigation services in that orbit, and provide valuable experience of small sat launch to the Moon.",
+                launchDesignator: nil,
+                type: "Planetary Science",
+                orbit: Mission.Orbit(
+                    id: 11,
+                    name: "Lunar Orbit",
+                    abbrev: "LO")
+            ),
+            pad: Pad(
+                id: 185,
+                url: "https://ll.thespacedevs.com/2.2.0/pad/185/",
+                agencyId: 147,
+                name: "Rocket Lab Launch Complex 1B",
+                infoUrl: nil,
+                wikiUrl: "https://en.wikipedia.org/wiki/Rocket_Lab_Launch_Complex_1",
+                mapUrl: "https://www.google.com/maps/place/-39.262833,177.864469",
+                latitude: "-39.262833",
+                longitude: "177.864469",
+                location: Pad.Location(
+                    id: 10,
+                    url: "https://ll.thespacedevs.com/2.2.0/location/10/",
+                    name: "Onenui Station, Mahia Peninsula, New Zealand",
+                    countryCode: "NZL",
+                    mapImage: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/location_10_20200803142509.jpg",
+                    totalLaunchCount: 26,
+                    totalLandingCount: 4
+                ),
+                mapImage: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launch_images/pad_185_20200803143540.jpg",
+                totalLaunchCount: 1
+            ),
+            webcastLive: true,
+            image: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/electron_image_20190705175640.jpeg",
+            infoURLs: [],
+            vidURLs: []
+        )
+    }
 }
 
 

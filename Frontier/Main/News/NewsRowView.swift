@@ -28,7 +28,7 @@ struct NewsRowView: View {
             }
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
-                    TagView(text: article.newsSite ?? "")
+                    TagView(text: article.newsSite ?? "", backgroundColor: .blue)
                 }
                 Text(article.title ?? "")
                     .font(.headline)

@@ -16,7 +16,7 @@ struct LaunchListView: View {
             VStack {
                 ForEach(launches) { launch in
                     NavigationLink {
-                        LaunchDetailView(launch: launch)
+                        LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: launch))
                     } label: {
                         LaunchRowView(launch: launch)
                     }

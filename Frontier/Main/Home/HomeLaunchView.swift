@@ -1,5 +1,5 @@
 //
-//  LaunchTabView.swift
+//  HomeLaunchView.swift
 //  Frontier
 //
 //  Created by Songyee Park on 2022/06/27.
@@ -14,7 +14,7 @@ struct HomeLaunchView: View {
     var body: some View {
         VStack {
             NavigationLink {
-                LaunchDetailView(launch: launch)
+                LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: launch))
             } label: {
                 LaunchView(launch: launch)
                     .padding(.bottom, 24)

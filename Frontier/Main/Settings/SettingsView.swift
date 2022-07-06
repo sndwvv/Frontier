@@ -16,6 +16,7 @@ struct SettingsView: View {
             Toggle("Dark Mode", isOn: $isDarkMode)
         }
         .environment(\.colorScheme, isDarkMode ? .dark : .light)
+        .navigationTitle("Settings")
     }
 
 }

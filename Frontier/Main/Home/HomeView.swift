@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         VStack(alignment: .center) {
             if launchFetcher.isLoading {
-                LaunchListLoadingView()
+                LaunchLoadingView()
             } else if launchFetcher.errorMessage != nil {
                 LaunchErrorView(launchFetcher: launchFetcher)
             } else if launchFetcher.launches.count == 0 {
@@ -24,6 +24,9 @@ struct HomeView: View {
                     HomeLaunchView(launch: latestLaunch)
                         .frame(height: 500)
                     LaunchListView(launches: launchFetcher.launches)
+                    Text("Data provided by Launch Library API")
+                        .font(.footnote)
+                        .padding(16)
                 }
             }
         }

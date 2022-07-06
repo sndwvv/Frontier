@@ -23,10 +23,15 @@ struct LaunchRowView: View {
                     .foregroundColor(.primaryText)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .topLeading)
+                    .lineLimit(2)
                 if let launchTime = launch.net {
                     Text(launchTime.readableFormat())
                         .font(.footnote)
                         .foregroundColor(.secondaryText)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
+                }
+                if let webcastLive = launch.webcastLive, webcastLive {
+                    TagView(text: "LIVE", backgroundColor: .red)
                         .frame(maxWidth: .infinity, alignment: .topLeading)
                 }
             }

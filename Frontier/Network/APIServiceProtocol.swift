@@ -7,7 +7,14 @@
 
 import Foundation
 
-protocol APIServiceProtocol {
-    func fetchLatestNews(completion: @escaping (Result<[Article], APIError>) -> Void)
+protocol LaunchListAPIServiceProtocol {
     func fetchUpcomingLaunches(completion: @escaping (Result<LaunchSerializer, APIError>) -> Void)
+}
+
+protocol LaunchDetailAPIServiceProtocol {
+    func fetchLaunchDetail(id: String, completion: @escaping (Result<Launch, APIError>) -> Void)
+}
+
+protocol NewsAPIServiceProtocol {
+    func fetchLatestNews(completion: @escaping (Result<[Article], APIError>) -> Void)
 }

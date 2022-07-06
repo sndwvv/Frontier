@@ -9,16 +9,16 @@ import SwiftUI
 
 struct LaunchDetailView: View {
     
-    let launch: Launch
+    @StateObject var detailFetcher: LaunchDetailFetcher
     
     var body: some View {
         ScrollView {
             VStack {
                 ZStack(alignment: .bottom) {
-                    if let imageUri = launch.image {
+                    if let imageUri = detailFetcher.launchDetail?.image {
                         StretchyHeaderImageView(urlString: imageUri)
                     }
-                    Text(launch.name ?? "NA")
+                    Text(detailFetcher.launchDetail?.name ?? "NA")
                         .font(.title).bold()
                         .foregroundColor(Color.primaryText)
                         .frame(maxWidth: .infinity)
@@ -30,44 +30,47 @@ struct LaunchDetailView: View {
             }
             
             VStack(spacing: 16) {
-                if let launchDate = launch.net {
+                if let launchDate = detailFetcher.launchDetail?.net {
                     LaunchCountdownView(launchDate: launchDate)
                         .frame(maxWidth: 300)
                         .frame(height: 80)
                 }
-                if let launchStatus = launch.status {
+                if let launchStatus = detailFetcher.launchDetail?.status {
                     LaunchStatusCardView(status: launchStatus)
                 }
-                if let mission = launch.mission {
+                if let mission = detailFetcher.launchDetail?.mission {
                     LaunchMissionCardView(mission: mission)
                 }
                 HStack(spacing: 4) {
-                    if let rocket = launch.rocket {
+                    if let rocket = detailFetcher.launchDetail?.rocket {
                         LaunchRocketCardView(rocket: rocket)
                     }
                     Spacer()
-                    if let service = launch.launchServiceProvider {
+                    if let service = detailFetcher.launchDetail?.launchServiceProvider {
                         LaunchServiceCardView(service: service)
                     }
                 }
                 .frame(minHeight: 120)
                 
-                if let pad = launch.pad {
+                if let pad = detailFetcher.launchDetail?.pad {
                     LaunchPadCardView(pad: pad)
                 }
             }
             .padding(.horizontal, 16)
         }
         .background(Color.mainBackground)
+        .onAppear {
+            detailFetcher.fetchLaunchDetail()
+        }
     }
 }
 
 struct LaunchDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LaunchDetailView(launch: Launch.example())
+            LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.example()))
                 .previewDevice("iPhone 12")
-            LaunchDetailView(launch: Launch.example())
+            LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.example()))
                 .previewDevice("iPad (9th generation)")
                 .preferredColorScheme(.dark)
         }
