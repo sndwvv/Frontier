@@ -25,11 +25,11 @@
 		1E40DDDC286D8E110038039F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDDB286D8E110038039F /* WebViewController.swift */; };
 		1EACE0E528706C530051B61D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E428706C530051B61D /* String+Ext.swift */; };
 		1EACE0E728706CCA0051B61D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E628706CCA0051B61D /* RoundedCorner.swift */; };
-		1EACE0F12873E5210051B61D /* LaunchDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0F02873E5210051B61D /* LaunchDetailed.swift */; };
 		1EACE0FA2873F83A0051B61D /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0F92873F83A0051B61D /* LaunchListView.swift */; };
 		1EACE0FC287403730051B61D /* LaunchEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0FB287403730051B61D /* LaunchEmptyView.swift */; };
 		1EACE102287566FB0051B61D /* LaunchDetailFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE101287566FB0051B61D /* LaunchDetailFetcher.swift */; };
 		1EACE10428756D4D0051B61D /* APIPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE10328756D4D0051B61D /* APIPath.swift */; };
+		1EACE10D28758C0F0051B61D /* Launch.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EACE10C28758C0F0051B61D /* Launch.json */; };
 		1EAFDF71286AAE7F00998ADA /* LaunchRocketCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF70286AAE7F00998ADA /* LaunchRocketCardView.swift */; };
 		1EAFDF73286AAEB600998ADA /* LaunchPadCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */; };
 		1EAFDF75286AB65D00998ADA /* LaunchServiceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF74286AB65D00998ADA /* LaunchServiceCardView.swift */; };
@@ -63,6 +63,14 @@
 		1ED3EEB22862DC0D00B4FC75 /* NewsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3EEB12862DC0D00B4FC75 /* NewsRowView.swift */; };
 		1ED3EEB72862DFAE00B4FC75 /* ImageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3EEB62862DFAE00B4FC75 /* ImageLoadingView.swift */; };
 		1ED3EEB92862DFD300B4FC75 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3EEB82862DFD300B4FC75 /* ImageLoader.swift */; };
+		1EE3034A28759B88007AF99C /* LaunchServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3034928759B88007AF99C /* LaunchServiceProvider.swift */; };
+		1EE3034C28759B9E007AF99C /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3034B28759B9E007AF99C /* Rocket.swift */; };
+		1EE3034E28759BB8007AF99C /* LaunchSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3034D28759BB8007AF99C /* LaunchSerializer.swift */; };
+		1EE3035028759BCE007AF99C /* LaunchStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3034F28759BCE007AF99C /* LaunchStatus.swift */; };
+		1EE3035228759BE0007AF99C /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035128759BE0007AF99C /* Mission.swift */; };
+		1EE3035428759BF6007AF99C /* Pad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035328759BF6007AF99C /* Pad.swift */; };
+		1EE3035628759C1B007AF99C /* InfoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035528759C1B007AF99C /* InfoURL.swift */; };
+		1EE3035828759C31007AF99C /* VidURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035728759C31007AF99C /* VidURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,11 +109,11 @@
 		1E40DDDB286D8E110038039F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		1EACE0E428706C530051B61D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		1EACE0E628706CCA0051B61D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
-		1EACE0F02873E5210051B61D /* LaunchDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailed.swift; sourceTree = "<group>"; };
 		1EACE0F92873F83A0051B61D /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
 		1EACE0FB287403730051B61D /* LaunchEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEmptyView.swift; sourceTree = "<group>"; };
 		1EACE101287566FB0051B61D /* LaunchDetailFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailFetcher.swift; sourceTree = "<group>"; };
 		1EACE10328756D4D0051B61D /* APIPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPath.swift; sourceTree = "<group>"; };
+		1EACE10C28758C0F0051B61D /* Launch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Launch.json; sourceTree = "<group>"; };
 		1EAFDF70286AAE7F00998ADA /* LaunchRocketCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRocketCardView.swift; sourceTree = "<group>"; };
 		1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPadCardView.swift; sourceTree = "<group>"; };
 		1EAFDF74286AB65D00998ADA /* LaunchServiceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceCardView.swift; sourceTree = "<group>"; };
@@ -143,6 +151,14 @@
 		1ED3EEB12862DC0D00B4FC75 /* NewsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRowView.swift; sourceTree = "<group>"; };
 		1ED3EEB62862DFAE00B4FC75 /* ImageLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingView.swift; sourceTree = "<group>"; };
 		1ED3EEB82862DFD300B4FC75 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		1EE3034928759B88007AF99C /* LaunchServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchServiceProvider.swift; sourceTree = "<group>"; };
+		1EE3034B28759B9E007AF99C /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		1EE3034D28759BB8007AF99C /* LaunchSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchSerializer.swift; sourceTree = "<group>"; };
+		1EE3034F28759BCE007AF99C /* LaunchStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStatus.swift; sourceTree = "<group>"; };
+		1EE3035128759BE0007AF99C /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		1EE3035328759BF6007AF99C /* Pad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pad.swift; sourceTree = "<group>"; };
+		1EE3035528759C1B007AF99C /* InfoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoURL.swift; sourceTree = "<group>"; };
+		1EE3035728759C31007AF99C /* VidURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +218,14 @@
 				1EAFDF72286AAEB600998ADA /* LaunchPadCardView.swift */,
 			);
 			path = LaunchDetail;
+			sourceTree = "<group>";
+		};
+		1EACE10B28758AEC0051B61D /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				1EACE10C28758C0F0051B61D /* Launch.json */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		1ED3EE4B2862BB3D00B4FC75 = {
@@ -330,7 +354,15 @@
 			children = (
 				1ED3EEA52862D08E00B4FC75 /* Article.swift */,
 				1EB24CFD2864697100229E9F /* Launch.swift */,
-				1EACE0F02873E5210051B61D /* LaunchDetailed.swift */,
+				1EE3034F28759BCE007AF99C /* LaunchStatus.swift */,
+				1EE3034D28759BB8007AF99C /* LaunchSerializer.swift */,
+				1EE3034928759B88007AF99C /* LaunchServiceProvider.swift */,
+				1EE3034B28759B9E007AF99C /* Rocket.swift */,
+				1EE3035128759BE0007AF99C /* Mission.swift */,
+				1EE3035328759BF6007AF99C /* Pad.swift */,
+				1EE3035528759C1B007AF99C /* InfoURL.swift */,
+				1EE3035728759C31007AF99C /* VidURL.swift */,
+				1EACE10B28758AEC0051B61D /* Examples */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ED3EE642862BB3E00B4FC75 /* LaunchScreen.storyboard in Resources */,
+				1EACE10D28758C0F0051B61D /* Launch.json in Resources */,
 				1ED3EE612862BB3E00B4FC75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +520,7 @@
 				1ED3EEA62862D08E00B4FC75 /* Article.swift in Sources */,
 				1E40DDCF286C0EB20038039F /* View+Ext.swift in Sources */,
 				1ED3EE8B2862BC0700B4FC75 /* ApplicationCoordinator.swift in Sources */,
+				1EE3035828759C31007AF99C /* VidURL.swift in Sources */,
 				1EACE0FC287403730051B61D /* LaunchEmptyView.swift in Sources */,
 				1E40DDCD286C0E710038039F /* CardViewModifier.swift in Sources */,
 				1E40DDCB286C0C2B0038039F /* LaunchStatusCardView.swift in Sources */,
@@ -495,6 +529,7 @@
 				1EACE10428756D4D0051B61D /* APIPath.swift in Sources */,
 				1E40DDD3286C468D0038039F /* LaunchLoadingView.swift in Sources */,
 				1ED3EE932862BE8600B4FC75 /* HomeView.swift in Sources */,
+				1EE3035028759BCE007AF99C /* LaunchStatus.swift in Sources */,
 				1ED3EEA82862D1CD00B4FC75 /* APIServiceProtocol.swift in Sources */,
 				1EB24CFC2864606400229E9F /* StretchyHeaderImageView.swift in Sources */,
 				1EAFDF73286AAEB600998ADA /* LaunchPadCardView.swift in Sources */,
@@ -502,20 +537,24 @@
 				1E40DDC9286BFDC90038039F /* Color+Ext.swift in Sources */,
 				1ED3EEAE2862D5E800B4FC75 /* NewsErrorView.swift in Sources */,
 				1EAFDF77286ABFC000998ADA /* TagView.swift in Sources */,
+				1EE3035428759BF6007AF99C /* Pad.swift in Sources */,
 				1E1218AE28699C1500328484 /* LaunchRowView.swift in Sources */,
 				1EACE0E528706C530051B61D /* String+Ext.swift in Sources */,
 				1E40DDD6286C768B0038039F /* SettingsTabCoordinator.swift in Sources */,
 				1ED3EE8E2862BC8C00B4FC75 /* MainCoordinator.swift in Sources */,
 				1EAFDF71286AAE7F00998ADA /* LaunchRocketCardView.swift in Sources */,
+				1EE3035228759BE0007AF99C /* Mission.swift in Sources */,
 				1E40DDD8286C76A90038039F /* SettingsView.swift in Sources */,
 				1ED3EEAA2862D24900B4FC75 /* NewsArticleFetcher.swift in Sources */,
 				1ED3EE9D2862CAF800B4FC75 /* APIError.swift in Sources */,
 				1E1218A82865D63F00328484 /* LaunchDetailView.swift in Sources */,
+				1EE3034A28759B88007AF99C /* LaunchServiceProvider.swift in Sources */,
 				1ED3EEA12862CCAF00B4FC75 /* APIMockService.swift in Sources */,
 				1E1218B02869C47900328484 /* LaunchMissionCardView.swift in Sources */,
 				1E40DDDC286D8E110038039F /* WebViewController.swift in Sources */,
 				1ED3EEAC2862D5BC00B4FC75 /* NewsLoadingView.swift in Sources */,
 				1EACE0E728706CCA0051B61D /* RoundedCorner.swift in Sources */,
+				1EE3034C28759B9E007AF99C /* Rocket.swift in Sources */,
 				1ED3EE9F2862CB3700B4FC75 /* APIService.swift in Sources */,
 				1ED3EE9A2862BF8900B4FC75 /* NewsView.swift in Sources */,
 				1EACE0FA2873F83A0051B61D /* LaunchListView.swift in Sources */,
@@ -524,11 +563,12 @@
 				1EB24CFE2864697100229E9F /* Launch.swift in Sources */,
 				1ED3EE892862BBF400B4FC75 /* Coordinator.swift in Sources */,
 				1ED3EEB72862DFAE00B4FC75 /* ImageLoadingView.swift in Sources */,
+				1EE3035628759C1B007AF99C /* InfoURL.swift in Sources */,
 				1E40DDD1286C17B60038039F /* LaunchCountdownView.swift in Sources */,
 				1ED3EE912862BCDB00B4FC75 /* HomeTabCoordinator.swift in Sources */,
 				1EAFDF75286AB65D00998ADA /* LaunchServiceCardView.swift in Sources */,
 				1ED3EE582862BB3D00B4FC75 /* AppDelegate.swift in Sources */,
-				1EACE0F12873E5210051B61D /* LaunchDetailed.swift in Sources */,
+				1EE3034E28759BB8007AF99C /* LaunchSerializer.swift in Sources */,
 				1E1218AC2869966800328484 /* HomeLaunchView.swift in Sources */,
 				1E40DDC4286ACF170038039F /* NewsWebView.swift in Sources */,
 				1ED3EEB02862D7EC00B4FC75 /* NewsListView.swift in Sources */,

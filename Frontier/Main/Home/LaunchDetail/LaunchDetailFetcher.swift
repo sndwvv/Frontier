@@ -15,7 +15,6 @@ class LaunchDetailFetcher: ObservableObject {
     init(service: LaunchDetailAPIServiceProtocol = APILaunchService(), launch: Launch) {
         self.service = service
         self.launchDetail = launch
-        self.fetchLaunchDetail()
     }
     
     @Published var launchDetail: Launch?

@@ -16,11 +16,12 @@ struct NewsListView: View {
             ForEach(articles) { article in
                 NavigationLink {
                     NewsWebView(article: article)
+                        .navigationBarTitleDisplayMode(.inline)
                 } label: {
                     NewsRowView(article: article)
                         .padding(.horizontal, 16)
                 }
-                .padding(.vertical, 8)
+                 .padding(.vertical, 8)
             }
             Text("Data provided by Spaceflight News API")
                 .font(.footnote)

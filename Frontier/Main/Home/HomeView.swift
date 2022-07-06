@@ -21,12 +21,15 @@ struct HomeView: View {
                 LaunchEmptyView(launchFetcher: launchFetcher)
             } else if let latestLaunch = launchFetcher.launches.first {
                 ScrollView {
-                    HomeLaunchView(launch: latestLaunch)
-                        .frame(height: 500)
-                    LaunchListView(launches: launchFetcher.launches)
-                    Text("Data provided by Launch Library API")
-                        .font(.footnote)
-                        .padding(16)
+                    VStack(spacing: 0) {
+                        HomeLaunchView(launch: latestLaunch)
+                            .frame(height: 500)
+                        
+                        LaunchListView(launches: Array(launchFetcher.launches.dropFirst()))
+                        Text("Data provided by Launch Library API")
+                            .font(.footnote)
+                            .padding(16)
+                    }
                 }
             }
         }

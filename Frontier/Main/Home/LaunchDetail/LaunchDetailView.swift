@@ -68,11 +68,17 @@ struct LaunchDetailView: View {
 struct LaunchDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.example()))
+            LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.localJSONExample()))
                 .previewDevice("iPhone 12")
-            LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.example()))
+                .onAppear {
+                    //
+                }
+            LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.localJSONExample()))
                 .previewDevice("iPad (9th generation)")
                 .preferredColorScheme(.dark)
+                .onAppear {
+                    //
+                }
         }
     }
 }
