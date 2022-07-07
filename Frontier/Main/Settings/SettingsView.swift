@@ -13,13 +13,17 @@ struct SettingsView: View {
 
     var body: some View {
         NavigationView {
-            Form {
-                Toggle("Dark Mode", isOn: $isDarkMode)
-            }
-            .environment(\.colorScheme, isDarkMode ? .dark : .light)
-            .navigationTitle("Settings")
+            self.settingsList
+                .environment(\.colorScheme, isDarkMode ? .dark : .light)
+                .navigationTitle("Settings")
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    @ViewBuilder private var settingsList: some View {
+        List {
+            Toggle("Dark Mode", isOn: $isDarkMode)
+        }
     }
 
 }

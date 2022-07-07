@@ -13,56 +13,64 @@ struct LaunchDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
-                ZStack(alignment: .bottom) {
-                    if let imageUri = detailFetcher.launchDetail?.image {
-                        StretchyHeaderImageView(urlString: imageUri)
-                    }
-                    Text(detailFetcher.launchDetail?.name ?? "NA")
-                        .font(.title).bold()
-                        .foregroundColor(Color.primaryText)
-                        .frame(maxWidth: .infinity)
-                        .padding(.top, 24)
-                        .padding(.horizontal, 16)
-                        .background(Color.mainBackground)
-                        .cornerRadius(20, corners: [.topLeft, .topRight])
-                }
-            }
-            
-            VStack(spacing: 16) {
-                if let launchDate = detailFetcher.launchDetail?.net {
-                    LaunchCountdownView(launchDate: launchDate)
-                        .frame(maxWidth: 300)
-                        .frame(height: 80)
-                }
-                if let launchStatus = detailFetcher.launchDetail?.status {
-                    LaunchStatusCardView(status: launchStatus)
-                }
-                if let mission = detailFetcher.launchDetail?.mission {
-                    LaunchMissionCardView(mission: mission)
-                }
-                HStack(spacing: 4) {
-                    if let rocket = detailFetcher.launchDetail?.rocket {
-                        LaunchRocketCardView(rocket: rocket)
-                    }
-                    Spacer()
-                    if let service = detailFetcher.launchDetail?.launchServiceProvider {
-                        LaunchServiceCardView(service: service)
-                    }
-                }
-                .frame(minHeight: 120)
-                
-                if let pad = detailFetcher.launchDetail?.pad {
-                    LaunchPadCardView(pad: pad)
-                }
-            }
-            .padding(.horizontal, 16)
+            headerView
+            cardViews
+                .padding(.horizontal, 16)
         }
         .background(Color.mainBackground)
-        .onAppear {
+        .task {
             detailFetcher.fetchLaunchDetail()
         }
     }
+    
+    @ViewBuilder private var headerView: some View {
+        VStack {
+            ZStack(alignment: .bottom) {
+                if let imageUri = detailFetcher.launchDetail?.image {
+                    StretchyHeaderImageView(urlString: imageUri)
+                }
+                Text(detailFetcher.launchDetail?.name ?? "NA")
+                    .font(.title).bold()
+                    .foregroundColor(Color.primaryText)
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 24)
+                    .padding(.horizontal, 16)
+                    .background(Color.mainBackground)
+                    .cornerRadius(20, corners: [.topLeft, .topRight])
+            }
+        }
+    }
+    
+    @ViewBuilder private var cardViews: some View {
+        VStack(spacing: 16) {
+            if let launchDate = detailFetcher.launchDetail?.net {
+                LaunchCountdownView(launchDate: launchDate)
+                    .frame(maxWidth: 300)
+                    .frame(height: 80)
+            }
+            if let launchStatus = detailFetcher.launchDetail?.status {
+                LaunchStatusCardView(status: launchStatus)
+            }
+            if let mission = detailFetcher.launchDetail?.mission {
+                LaunchMissionCardView(mission: mission)
+            }
+            HStack(spacing: 4) {
+                if let rocket = detailFetcher.launchDetail?.rocket {
+                    LaunchRocketCardView(rocket: rocket)
+                }
+                Spacer()
+                if let service = detailFetcher.launchDetail?.launchServiceProvider {
+                    LaunchServiceCardView(service: service)
+                }
+            }
+            .frame(minHeight: 120)
+            
+            if let pad = detailFetcher.launchDetail?.pad {
+                LaunchPadCardView(pad: pad)
+            }
+        }
+    }
+    
 }
 
 struct LaunchDetailView_Previews: PreviewProvider {

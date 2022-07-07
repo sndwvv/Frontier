@@ -13,27 +13,36 @@ struct NewsListView: View {
     
     var body: some View {
         ScrollView {
-            ForEach(articles) { article in
-                NavigationLink {
-                    NewsWebView(article: article)
-                        .navigationBarTitleDisplayMode(.inline)
-                } label: {
-                    NewsRowView(article: article)
-                        .padding(.horizontal, 16)
-                }
-                 .padding(.vertical, 8)
-            }
-            Text("Data provided by Spaceflight News API")
-                .font(.footnote)
-                .padding(16)
+            newsList
+            footerView
         }
         .listStyle(.plain)
-        .onAppear {
+        .task {
             // print("cache size: \(URLCache.shared.memoryCapacity / 1024)KB")
             URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // 0.5 gb
         }
         .background(Color.mainBackground)
     }
+    
+    @ViewBuilder private var newsList: some View {
+        ForEach(articles) { article in
+            NavigationLink {
+                NewsWebView(article: article)
+                    .navigationBarTitleDisplayMode(.inline)
+            } label: {
+                NewsRowView(article: article)
+                    .padding(.horizontal, 16)
+            }
+             .padding(.vertical, 8)
+        }
+    }
+    
+    @ViewBuilder private var footerView: some View {
+        Text("Data provided by Spaceflight News API")
+            .font(.footnote)
+            .padding(16)
+    }
+    
 }
 
 struct NewsListView_Previews: PreviewProvider {

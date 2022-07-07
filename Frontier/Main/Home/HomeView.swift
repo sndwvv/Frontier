@@ -16,7 +16,7 @@ struct HomeView: View {
             self.content
                 .navigationTitle("Upcoming")
         }
-        .navigationViewStyle(DoubleColumnNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
     
     @ViewBuilder private var content: some View {
@@ -32,12 +32,16 @@ struct HomeView: View {
                     HomeLaunchView(launch: latestLaunch)
                         .frame(height: 500)
                     LaunchListView(launches: Array(launchFetcher.launches.dropFirst()))
-                    Text("Data provided by Launch Library API")
-                        .font(.footnote)
-                        .padding(16)
+                    footerView
                 }
             }
         }
+    }
+    
+    @ViewBuilder private var footerView: some View {
+        Text("Data provided by Launch Library API")
+            .font(.footnote)
+            .padding(16)
     }
 
 }
@@ -45,10 +49,18 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         let fetcher = LaunchFetcher()
-        HomeView(launchFetcher: fetcher)
-            .onAppear {
-                fetcher.isLoading = false
-                fetcher.errorMessage = "Error"
+        Group {
+            HomeView(launchFetcher: fetcher)
+                .task {
+                    fetcher.isLoading = false
+                    fetcher.errorMessage = "Error"
             }
+            HomeView(launchFetcher: fetcher)
+                .previewDevice("iPad (9th generation)")
+                .task {
+                    fetcher.isLoading = false
+                    fetcher.launches = [Launch.example(), Launch.localJSONExample()]
+                }
+        }
     }
 }

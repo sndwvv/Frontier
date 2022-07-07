@@ -13,18 +13,22 @@ struct NewsView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .center) {
-                if fetcher.isLoading {
-                    NewsLoadingView()
-                } else if fetcher.errorMessage != nil {
-                    NewsErrorView(fetcher: fetcher)
-                } else {
-                    NewsListView(articles: fetcher.articles)
-                }
-            }.navigationTitle("News")
+            self.content
+                .navigationTitle("News")
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
+    
+    @ViewBuilder private var content: some View  {
+        if fetcher.isLoading {
+            NewsLoadingView()
+        } else if fetcher.errorMessage != nil {
+            NewsErrorView(fetcher: fetcher)
+        } else {
+            NewsListView(articles: fetcher.articles)
+        }
+    }
+    
 }
 
 struct NewsView_Previews: PreviewProvider {

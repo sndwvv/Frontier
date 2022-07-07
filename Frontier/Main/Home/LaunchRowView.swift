@@ -17,29 +17,34 @@ struct LaunchRowView: View {
                 .frame(width: 100, height: 100, alignment: .center)
                 .cornerRadius(10)
                 .clipped()
-            VStack(spacing: 8) {
-                Text(launch.name ?? "")
-                    .font(.headline)
-                    .foregroundColor(.primaryText)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .topLeading)
-                    .lineLimit(2)
-                if let launchTime = launch.net {
-                    Text(launchTime.readableFormat())
-                        .font(.footnote)
-                        .foregroundColor(.secondaryText)
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                }
-                if let webcastLive = launch.webcastLive, webcastLive {
-                    TagView(text: "LIVE", backgroundColor: .red)
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.trailing, 8)
+            launchItemLabels
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.trailing, 8)
         }
         .frame(height: 100)
     }
+    
+    @ViewBuilder private var launchItemLabels: some View {
+        VStack(spacing: 8) {
+            Text(launch.name ?? "")
+                .font(.headline)
+                .foregroundColor(.primaryText)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+                .lineLimit(2)
+            if let launchTime = launch.net {
+                Text(launchTime.readableFormat())
+                    .font(.footnote)
+                    .foregroundColor(.secondaryText)
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+            }
+            if let webcastLive = launch.webcastLive, webcastLive {
+                TagView(text: "LIVE", backgroundColor: .red)
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+            }
+        }
+    }
+    
 }
 
 struct LaunchRowView_Previews: PreviewProvider {
