@@ -12,11 +12,14 @@ struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
 
     var body: some View {
-        Form {
-            Toggle("Dark Mode", isOn: $isDarkMode)
+        NavigationView {
+            Form {
+                Toggle("Dark Mode", isOn: $isDarkMode)
+            }
+            .environment(\.colorScheme, isDarkMode ? .dark : .light)
+            .navigationTitle("Settings")
         }
-        .environment(\.colorScheme, isDarkMode ? .dark : .light)
-        .navigationTitle("Settings")
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 
 }

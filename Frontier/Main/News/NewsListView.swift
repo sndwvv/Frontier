@@ -27,7 +27,6 @@ struct NewsListView: View {
                 .font(.footnote)
                 .padding(16)
         }
-        .navigationTitle("News")
         .listStyle(.plain)
         .onAppear {
             // print("cache size: \(URLCache.shared.memoryCapacity / 1024)KB")
