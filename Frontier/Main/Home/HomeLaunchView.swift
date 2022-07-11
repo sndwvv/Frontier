@@ -20,7 +20,7 @@ struct HomeLaunchView: View {
                     .padding(.bottom, 24)
             }
         }
-        .background(Color.mainBackground)
+        // .background(Color.mainBackground)
     }
     
 }

@@ -14,7 +14,6 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             self.settingsList
-                .environment(\.colorScheme, isDarkMode ? .dark : .light)
                 .navigationTitle("Settings")
         }
         .navigationViewStyle(StackNavigationViewStyle())

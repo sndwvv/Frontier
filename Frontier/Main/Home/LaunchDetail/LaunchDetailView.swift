@@ -23,7 +23,7 @@ struct LaunchDetailView: View {
         }
     }
     
-    @ViewBuilder private var headerView: some View {
+    private var headerView: some View {
         VStack {
             ZStack(alignment: .bottom) {
                 if let imageUri = detailFetcher.launchDetail?.image {
@@ -41,7 +41,7 @@ struct LaunchDetailView: View {
         }
     }
     
-    @ViewBuilder private var cardViews: some View {
+    private var cardViews: some View {
         VStack(spacing: 16) {
             if let launchDate = detailFetcher.launchDetail?.net {
                 LaunchCountdownView(launchDate: launchDate)

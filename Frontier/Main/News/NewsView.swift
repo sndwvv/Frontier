@@ -19,7 +19,7 @@ struct NewsView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    @ViewBuilder private var content: some View  {
+    @ViewBuilder private var content: some View {
         if fetcher.isLoading {
             NewsLoadingView()
         } else if fetcher.errorMessage != nil {

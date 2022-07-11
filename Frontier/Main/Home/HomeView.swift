@@ -30,15 +30,15 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     HomeLaunchView(launch: latestLaunch)
-                        .frame(height: 500)
+                        .frame(height: 550)
                     LaunchListView(launches: Array(launchFetcher.launches.dropFirst()))
                     footerView
                 }
-            }
+            }.background(Color.mainBackground)
         }
     }
     
-    @ViewBuilder private var footerView: some View {
+    private var footerView: some View {
         Text("Data provided by Launch Library API")
             .font(.footnote)
             .padding(16)
@@ -51,11 +51,13 @@ struct HomeView_Previews: PreviewProvider {
         let fetcher = LaunchFetcher()
         Group {
             HomeView(launchFetcher: fetcher)
+                .preferredColorScheme(.dark)
                 .task {
                     fetcher.isLoading = false
-                    fetcher.errorMessage = "Error"
+                    fetcher.launches = [Launch.example(), Launch.localJSONExample()]
             }
             HomeView(launchFetcher: fetcher)
+                .preferredColorScheme(.dark)
                 .previewDevice("iPad (9th generation)")
                 .task {
                     fetcher.isLoading = false

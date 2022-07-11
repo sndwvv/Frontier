@@ -24,7 +24,7 @@ struct NewsListView: View {
         .background(Color.mainBackground)
     }
     
-    @ViewBuilder private var newsList: some View {
+    private var newsList: some View {
         ForEach(articles) { article in
             NavigationLink {
                 NewsWebView(article: article)
@@ -37,7 +37,7 @@ struct NewsListView: View {
         }
     }
     
-    @ViewBuilder private var footerView: some View {
+    private var footerView: some View {
         Text("Data provided by Spaceflight News API")
             .font(.footnote)
             .padding(16)

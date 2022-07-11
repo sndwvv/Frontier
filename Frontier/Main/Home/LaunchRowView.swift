@@ -24,7 +24,7 @@ struct LaunchRowView: View {
         .frame(height: 100)
     }
     
-    @ViewBuilder private var launchItemLabels: some View {
+    private var launchItemLabels: some View {
         VStack(spacing: 8) {
             Text(launch.name ?? "")
                 .font(.headline)
