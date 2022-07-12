@@ -1,5 +1,5 @@
 //
-//  HomeLaunchView.swift
+//  LaunchLargeView.swift
 //  Frontier
 //
 //  Created by Songyee Park on 2022/06/27.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomeLaunchView: View {
+struct LaunchLargeView: View {
     
     let launch: Launch
     
@@ -20,14 +20,13 @@ struct HomeLaunchView: View {
                     .padding(.bottom, 24)
             }
         }
-        // .background(Color.mainBackground)
     }
     
 }
 
-struct HomeLaunchView_Previews: PreviewProvider {
+struct LaunchLargeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeLaunchView(launch: Launch.example())
+        LaunchLargeView(launch: Launch.example())
             .previewInterfaceOrientation(.portrait)
     }
 }

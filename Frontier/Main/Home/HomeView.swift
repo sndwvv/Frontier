@@ -9,33 +9,33 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var launchFetcher = LaunchFetcher()
+    @StateObject var viewModel = HomeLaunchViewModel()
     
     var body: some View {
         NavigationView {
-            self.content
-                .navigationTitle("Upcoming")
+            VStack {
+                switch viewModel.state {
+                case .loading:
+                    LaunchLoadingView()
+                case .error(let errorMessage):
+                    LaunchErrorView(viewModel: viewModel, errorMessasge: errorMessage)
+                case .empty:
+                    LaunchEmptyView(viewModel: viewModel)
+                case .loaded(let firstLaunch, let launchList):
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            LaunchLargeView(launch: firstLaunch)
+                                .frame(height: 550)
+                            LaunchListView(launches: launchList)
+                            footerView
+                        }
+                    }
+                    .background(Color.mainBackground)
+                }
+            }
+            .navigationTitle("Upcoming")
         }
         .navigationViewStyle(.stack)
-    }
-    
-    @ViewBuilder private var content: some View {
-        if launchFetcher.isLoading {
-            LaunchLoadingView()
-        } else if launchFetcher.errorMessage != nil {
-            LaunchErrorView(launchFetcher: launchFetcher)
-        } else if launchFetcher.launches.count == 0 {
-            LaunchEmptyView(launchFetcher: launchFetcher)
-        } else if let latestLaunch = launchFetcher.launches.first {
-            ScrollView {
-                VStack(spacing: 0) {
-                    HomeLaunchView(launch: latestLaunch)
-                        .frame(height: 550)
-                    LaunchListView(launches: Array(launchFetcher.launches.dropFirst()))
-                    footerView
-                }
-            }.background(Color.mainBackground)
-        }
     }
     
     private var footerView: some View {
@@ -48,20 +48,16 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let fetcher = LaunchFetcher()
+        let fetcher = HomeLaunchViewModel()
         Group {
-            HomeView(launchFetcher: fetcher)
+            HomeView(viewModel: fetcher)
                 .preferredColorScheme(.dark)
                 .task {
-                    fetcher.isLoading = false
-                    fetcher.launches = [Launch.example(), Launch.localJSONExample()]
-            }
-            HomeView(launchFetcher: fetcher)
+                }
+            HomeView(viewModel: fetcher)
                 .preferredColorScheme(.dark)
                 .previewDevice("iPad (9th generation)")
                 .task {
-                    fetcher.isLoading = false
-                    fetcher.launches = [Launch.example(), Launch.localJSONExample()]
                 }
         }
     }
