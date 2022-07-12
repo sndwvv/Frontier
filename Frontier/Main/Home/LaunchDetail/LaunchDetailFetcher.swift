@@ -15,27 +15,21 @@ class LaunchDetailFetcher: ObservableObject {
     init(service: LaunchDetailAPIServiceProtocol = APILaunchService(), launch: Launch) {
         self.service = service
         self.launchDetail = launch
+        fetchLaunchDetail()
     }
     
     @Published var launchDetail: Launch?
-    @Published var isLoading: Bool = false
-    @Published var errorMessage: String?
     
     func fetchLaunchDetail() {
-        isLoading = true
-        errorMessage = nil
-        
         guard let launchDetail = launchDetail else {
             return
         }
-        
         service.fetchLaunchDetail(id: launchDetail.id) { [unowned self] result in
             DispatchQueue.main.async {
-                self.isLoading = false
                 switch result {
                 case .failure(let error):
-                    self.errorMessage = error.localizedDescription
-                    print(error.localizedDescription)
+                    print(error.description)
+                    break
                 case .success(let launchDetail):
                     self.launchDetail = launchDetail
                     print(launchDetail)
@@ -43,5 +37,4 @@ class LaunchDetailFetcher: ObservableObject {
             }
         }
     }
-    
 }

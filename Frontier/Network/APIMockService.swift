@@ -23,6 +23,7 @@ struct LaunchListAPIMockService: LaunchListAPIServiceProtocol {
     func fetchUpcomingLaunches(completion: @escaping (Result<LaunchSerializer, APIError>) -> Void) {
          completion(result)
     }
+
 }
 
 struct LaunchDetailAPIMockService: LaunchDetailAPIServiceProtocol {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var viewModel = HomeLaunchViewModel()
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
         NavigationView {
@@ -22,42 +22,37 @@ struct HomeView: View {
                 case .empty:
                     LaunchEmptyView(viewModel: viewModel)
                 case .loaded(let firstLaunch, let launchList):
-                    ScrollView {
-                        VStack(spacing: 0) {
-                            LaunchLargeView(launch: firstLaunch)
-                                .frame(height: 550)
-                            LaunchListView(launches: launchList)
-                            footerView
-                        }
-                    }
-                    .background(Color.mainBackground)
+                    HomeLaunchListView(firstLaunch: firstLaunch, launchList: launchList)
                 }
             }
             .navigationTitle("Upcoming")
-        }
-        .navigationViewStyle(.stack)
-    }
-    
-    private var footerView: some View {
-        Text("Data provided by Launch Library API")
-            .font(.footnote)
-            .padding(16)
+         }
+         .navigationViewStyle(.stack)
     }
 
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let fetcher = HomeLaunchViewModel()
+        let viewModel = HomeViewModel()
         Group {
-            HomeView(viewModel: fetcher)
-                .preferredColorScheme(.dark)
+            HomeView(viewModel: viewModel)
+                .preferredColorScheme(.light)
+                .previewDevice("iPhone 12")
                 .task {
+                    viewModel.state = .loaded(Launch.example(), [Launch.localJSONExample(), Launch.localJSONExample()])
                 }
-            HomeView(viewModel: fetcher)
-                .preferredColorScheme(.dark)
-                .previewDevice("iPad (9th generation)")
+            HomeView(viewModel: viewModel)
+                .preferredColorScheme(.light)
+                .previewDevice("iPhone 13 mini")
                 .task {
+                    viewModel.state = .empty
+                }
+            HomeView(viewModel: viewModel)
+                .preferredColorScheme(.dark)
+                .previewDevice("iPhone SE (3rd generation)")
+                .task {
+                    viewModel.state = .error(APIError.badURL.localizedDescription)
                 }
         }
     }

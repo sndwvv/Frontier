@@ -9,17 +9,17 @@ import SwiftUI
 
 struct NewsErrorView: View {
     
-    @ObservedObject var fetcher: NewsArticleFetcher
+    @ObservedObject var viewModel: NewsViewModel
+    let errorMessage: String
     
     var body: some View {
         VStack(spacing: 20) {
             Text("😿")
                 .font(.system(size: 40))
-            ProgressView()
-            Text(fetcher.errorMessage ?? "")
+            Text(errorMessage)
                 .foregroundColor(.primary)
             Button {
-                fetcher.fetchArticles()
+                viewModel.load()
             } label: {
                 Text("Try Again")
             }
@@ -29,6 +29,6 @@ struct NewsErrorView: View {
 
 struct NewsErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsErrorView(fetcher: NewsArticleFetcher())
+        NewsErrorView(viewModel: NewsViewModel(), errorMessage: "Something went wrong.")
     }
 }

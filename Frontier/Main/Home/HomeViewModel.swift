@@ -1,5 +1,5 @@
 //
-//  HomeLaunchViewModel.swift
+//  HomeViewModel.swift
 //  Frontier
 //
 //  Created by Songyee Park on 2022/06/24.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class HomeLaunchViewModel: ObservableObject {
+class HomeViewModel: ObservableObject {
     
     let service: LaunchListAPIServiceProtocol
     
@@ -16,8 +16,6 @@ class HomeLaunchViewModel: ObservableObject {
         self.service = service
         load()
     }
-    
-    // MARK: Test
     
     enum State {
         case loading
@@ -34,12 +32,12 @@ class HomeLaunchViewModel: ObservableObject {
                 switch result {
                 case .failure(let error):
                     self.state = .error(error.localizedDescription)
-                case .success(let launchResponse):
-                    if launchResponse.results.isEmpty {
+                case .success(let response):
+                    if response.results.isEmpty {
                         self.state = .empty
                     } else {
-                        if let firstLaunch = launchResponse.results.first {
-                            let launchList = Array(launchResponse.results.dropFirst())
+                        if let firstLaunch = response.results.first {
+                            let launchList = Array(response.results.dropFirst())
                             self.state = .loaded(firstLaunch, launchList)
                         }
                     }

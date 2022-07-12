@@ -23,7 +23,6 @@ struct LaunchListView: View {
                 }
             }.padding(.horizontal, 8)
         }
-        // .background(Color.mainBackground)
     }
 }
 

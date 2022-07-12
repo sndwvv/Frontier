@@ -9,30 +9,32 @@ import SwiftUI
 
 struct NewsView: View {
     
-    @StateObject var fetcher = NewsArticleFetcher()
+    @StateObject var viewModel = NewsViewModel()
     
     var body: some View {
         NavigationView {
-            self.content
-                .navigationTitle("News")
+            VStack {
+                switch viewModel.state {
+                case .loading:
+                    NewsLoadingView()
+                case .error(let errorMessage):
+                    NewsErrorView(viewModel: viewModel, errorMessage: errorMessage)
+                case .empty:
+                    Text("Empty View")
+                case .loaded(let articles):
+                    NewsListView(articles: articles)
+                }
+            }
+            .navigationTitle("News")
         }
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-    
-    @ViewBuilder private var content: some View {
-        if fetcher.isLoading {
-            NewsLoadingView()
-        } else if fetcher.errorMessage != nil {
-            NewsErrorView(fetcher: fetcher)
-        } else {
-            NewsListView(articles: fetcher.articles)
-        }
     }
     
 }
 
 struct NewsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsView()
+        let viewModel = NewsViewModel()
+        NewsView(viewModel: viewModel)
     }
 }

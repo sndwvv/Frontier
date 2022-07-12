@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LaunchEmptyView: View {
     
-    let viewModel: HomeLaunchViewModel
+    let viewModel: HomeViewModel
     
     var body: some View {
         VStack(spacing: 20) {
@@ -28,6 +28,6 @@ struct LaunchEmptyView: View {
 
 struct LaunchEmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchEmptyView(viewModel: HomeLaunchViewModel())
+        LaunchEmptyView(viewModel: HomeViewModel())
     }
 }

@@ -8,37 +8,45 @@
 import Foundation
 import Combine
 
-class NewsArticleFetcher: ObservableObject {
-    
-    @Published var articles = [Article]()
-    @Published var isLoading: Bool = false
-    @Published var errorMessage: String? = nil
+class NewsViewModel: ObservableObject {
     
     let service: NewsAPIServiceProtocol
     
     init(service: NewsAPIServiceProtocol = NewsAPIService()) {
         self.service = service
-        fetchArticles()
+        load()
     }
     
-    private var cancellable: AnyCancellable?
+    enum State {
+        case loading
+        case error(String)
+        case empty
+        case loaded([Article])
+    }
     
-    func fetchArticles() {
-        isLoading = true
-        errorMessage = nil
-        
-        service.fetchLatestNews() { [unowned self] result in
+    @Published var state: State = .loading
+    
+    func load() {
+        service.fetchLatestNews { [unowned self] result in
             DispatchQueue.main.async {
-                self.isLoading = false
                 switch result {
                 case .failure(let error):
-                    self.errorMessage = error.localizedDescription
-                    print(error.description)
+                    self.state = .error(error.localizedDescription)
                 case .success(let articles):
-                    self.articles = articles
+                    if articles.isEmpty {
+                        self.state = .empty
+                    } else {
+                        self.state = .loaded(articles)
+                    }
                 }
             }
         }
+    }
+    
+    func mockErrorState() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            self.state = .error(APIError.badURL.localizedDescription)
+        })
     }
     
 }

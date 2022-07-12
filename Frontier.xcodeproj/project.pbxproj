@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E1218A62865924300328484 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218A52865924300328484 /* LaunchView.swift */; };
+		1E1218A62865924300328484 /* LaunchLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218A52865924300328484 /* LaunchLargeView.swift */; };
 		1E1218A82865D63F00328484 /* LaunchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218A72865D63F00328484 /* LaunchDetailView.swift */; };
 		1E1218AA2865D8A700328484 /* LaunchErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218A92865D8A700328484 /* LaunchErrorView.swift */; };
-		1E1218AC2869966800328484 /* LaunchLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AB2869966800328484 /* LaunchLargeView.swift */; };
 		1E1218AE28699C1500328484 /* LaunchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AD28699C1500328484 /* LaunchRowView.swift */; };
 		1E1218B02869C47900328484 /* LaunchMissionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */; };
 		1E40DDC4286ACF170038039F /* NewsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDC3286ACF170038039F /* NewsWebView.swift */; };
@@ -22,6 +21,7 @@
 		1E40DDD3286C468D0038039F /* LaunchLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD2286C468D0038039F /* LaunchLoadingView.swift */; };
 		1E40DDD8286C76A90038039F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD7286C76A90038039F /* SettingsView.swift */; };
 		1E40DDDC286D8E110038039F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDDB286D8E110038039F /* WebViewController.swift */; };
+		1E91C27B287DD379006481F3 /* HomeLaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E91C27A287DD379006481F3 /* HomeLaunchListView.swift */; };
 		1EACE0E528706C530051B61D /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E428706C530051B61D /* String+Ext.swift */; };
 		1EACE0E728706CCA0051B61D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0E628706CCA0051B61D /* RoundedCorner.swift */; };
 		1EACE0FA2873F83A0051B61D /* LaunchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EACE0F92873F83A0051B61D /* LaunchListView.swift */; };
@@ -35,7 +35,7 @@
 		1EAFDF77286ABFC000998ADA /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EAFDF76286ABFC000998ADA /* TagView.swift */; };
 		1EB24CFC2864606400229E9F /* StretchyHeaderImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB24CFB2864606400229E9F /* StretchyHeaderImageView.swift */; };
 		1EB24CFE2864697100229E9F /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB24CFD2864697100229E9F /* Launch.swift */; };
-		1EB24D03286575C900229E9F /* HomeLaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB24D02286575C900229E9F /* HomeLaunchViewModel.swift */; };
+		1EB24D03286575C900229E9F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB24D02286575C900229E9F /* HomeViewModel.swift */; };
 		1ED3EE582862BB3D00B4FC75 /* FrontierApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3EE572862BB3D00B4FC75 /* FrontierApp.swift */; };
 		1ED3EE612862BB3E00B4FC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ED3EE602862BB3E00B4FC75 /* Assets.xcassets */; };
 		1ED3EE642862BB3E00B4FC75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ED3EE622862BB3E00B4FC75 /* LaunchScreen.storyboard */; };
@@ -85,10 +85,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1E1218A52865924300328484 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		1E1218A52865924300328484 /* LaunchLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLargeView.swift; sourceTree = "<group>"; };
 		1E1218A72865D63F00328484 /* LaunchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailView.swift; sourceTree = "<group>"; };
 		1E1218A92865D8A700328484 /* LaunchErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchErrorView.swift; sourceTree = "<group>"; };
-		1E1218AB2869966800328484 /* LaunchLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLargeView.swift; sourceTree = "<group>"; };
 		1E1218AD28699C1500328484 /* LaunchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRowView.swift; sourceTree = "<group>"; };
 		1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchMissionCardView.swift; sourceTree = "<group>"; };
 		1E40DDC3286ACF170038039F /* NewsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebView.swift; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		1E40DDD2286C468D0038039F /* LaunchLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLoadingView.swift; sourceTree = "<group>"; };
 		1E40DDD7286C76A90038039F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1E40DDDB286D8E110038039F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		1E91C27A287DD379006481F3 /* HomeLaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLaunchListView.swift; sourceTree = "<group>"; };
 		1EACE0E428706C530051B61D /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		1EACE0E628706CCA0051B61D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		1EACE0F92873F83A0051B61D /* LaunchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchListView.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		1EAFDF76286ABFC000998ADA /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		1EB24CFB2864606400229E9F /* StretchyHeaderImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderImageView.swift; sourceTree = "<group>"; };
 		1EB24CFD2864697100229E9F /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
-		1EB24D02286575C900229E9F /* HomeLaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLaunchViewModel.swift; sourceTree = "<group>"; };
+		1EB24D02286575C900229E9F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1ED3EE542862BB3D00B4FC75 /* Frontier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED3EE572862BB3D00B4FC75 /* FrontierApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontierApp.swift; sourceTree = "<group>"; };
 		1ED3EE602862BB3E00B4FC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -283,11 +283,11 @@
 			isa = PBXGroup;
 			children = (
 				1ED3EE922862BE8600B4FC75 /* HomeView.swift */,
-				1EB24D02286575C900229E9F /* HomeLaunchViewModel.swift */,
-				1E1218AB2869966800328484 /* LaunchLargeView.swift */,
+				1EB24D02286575C900229E9F /* HomeViewModel.swift */,
+				1E91C27A287DD379006481F3 /* HomeLaunchListView.swift */,
+				1E1218A52865924300328484 /* LaunchLargeView.swift */,
 				1EACE0F92873F83A0051B61D /* LaunchListView.swift */,
 				1E1218AD28699C1500328484 /* LaunchRowView.swift */,
-				1E1218A52865924300328484 /* LaunchView.swift */,
 				1E40DDD2286C468D0038039F /* LaunchLoadingView.swift */,
 				1E1218A92865D8A700328484 /* LaunchErrorView.swift */,
 				1EACE0FB287403730051B61D /* LaunchEmptyView.swift */,
@@ -495,10 +495,11 @@
 				1E40DDCF286C0EB20038039F /* View+Ext.swift in Sources */,
 				1EE3035828759C31007AF99C /* VidURL.swift in Sources */,
 				1EACE0FC287403730051B61D /* LaunchEmptyView.swift in Sources */,
+				1E91C27B287DD379006481F3 /* HomeLaunchListView.swift in Sources */,
 				1E40DDCD286C0E710038039F /* CardViewModifier.swift in Sources */,
 				1E40DDCB286C0C2B0038039F /* LaunchStatusCardView.swift in Sources */,
-				1E1218A62865924300328484 /* LaunchView.swift in Sources */,
-				1EB24D03286575C900229E9F /* HomeLaunchViewModel.swift in Sources */,
+				1E1218A62865924300328484 /* LaunchLargeView.swift in Sources */,
+				1EB24D03286575C900229E9F /* HomeViewModel.swift in Sources */,
 				1EACE10428756D4D0051B61D /* APIPath.swift in Sources */,
 				1E40DDD3286C468D0038039F /* LaunchLoadingView.swift in Sources */,
 				1ED3EE932862BE8600B4FC75 /* HomeView.swift in Sources */,
@@ -537,7 +538,6 @@
 				1EAFDF75286AB65D00998ADA /* LaunchServiceCardView.swift in Sources */,
 				1ED3EE582862BB3D00B4FC75 /* FrontierApp.swift in Sources */,
 				1EE3034E28759BB8007AF99C /* LaunchSerializer.swift in Sources */,
-				1E1218AC2869966800328484 /* LaunchLargeView.swift in Sources */,
 				1E40DDC4286ACF170038039F /* NewsWebView.swift in Sources */,
 				1ED3EEB02862D7EC00B4FC75 /* NewsListView.swift in Sources */,
 				1EE303602876CBB8007AF99C /* RootView.swift in Sources */,

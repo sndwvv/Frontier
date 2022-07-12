@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LaunchErrorView: View {
     
-    let viewModel: HomeLaunchViewModel
+    let viewModel: HomeViewModel
     let errorMessasge: String
     
     var body: some View {
@@ -29,6 +29,6 @@ struct LaunchErrorView: View {
 
 struct LaunchErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchErrorView(viewModel: HomeLaunchViewModel(), errorMessasge: "Something went wrong.")
+        LaunchErrorView(viewModel: HomeViewModel(), errorMessasge: "Something went wrong.")
     }
 }
