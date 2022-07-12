@@ -10,45 +10,41 @@ import UIKit
 
 class ImageLoader: ObservableObject {
     
-    let url: String?
-    
-    @Published var image: UIImage?
-    @Published var errorMessage: String?
-    @Published var isLoading: Bool = false
-    
-    init(url: String?) {
+    let url: String
+
+    init(url: String) {
         self.url = url
     }
     
-    func fetch() {
-        guard image == nil && !isLoading else {
+    enum State {
+        case loading
+        case error(String)
+        case loaded(UIImage)
+    }
+    
+    @Published var state: State = .loading
+    
+    func load() {
+        guard let fetchURL = URL(string: url) else {
+            self.state = .error(APIError.badURL.localizedDescription)
             return
         }
-        
-        guard let url = url, let fetchURL = URL(string: url) else {
-            errorMessage = APIError.badURL.localizedDescription
-            return
-        }
-        
-        isLoading = true
-        errorMessage = nil
-        
         let request = URLRequest(url: fetchURL, cachePolicy: .returnCacheDataElseLoad)
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else { return }
             DispatchQueue.main.async {
-                self.isLoading = false
                 if let error = error {
-                    self.errorMessage = error.localizedDescription
+                    self.state = .error(error.localizedDescription)
                 } else if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
-                    self.errorMessage = APIError.badResponse(statusCode: response.statusCode).localizedDescription
+                    self.state = .error(APIError.badResponse(statusCode: response.statusCode).localizedDescription)
                 } else if let data = data, let image = UIImage(data: data) {
-                    self.image = image
+                    self.state = .loaded(image)
                 } else {
-                    self.errorMessage = APIError.unknown.localizedDescription
+                    self.state = .error(APIError.unknown.localizedDescription)
                 }
             }
-        }.resume()
+        }
+        task.resume()
     }
     
 }

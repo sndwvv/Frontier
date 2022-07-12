@@ -17,28 +17,34 @@ struct StretchyHeaderImageView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            if imageLoader.image != nil {
+            switch imageLoader.state {
+            case .loaded(let image):
                 if geometry.frame(in: .global).minY <= 0 {
-                    Image(uiImage: imageLoader.image!)
+                    Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .offset(y: geometry.frame(in: .global).minY/9)
                         .clipped()
                 } else {
-                    Image(uiImage: imageLoader.image!)
+                    Image(uiImage: image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: geometry.size.width, height: geometry.size.height + geometry.frame(in: .global).minY)
                         .clipped()
                         .offset(y: -geometry.frame(in: .global).minY)
                 }
+            default:
+                Image("PlaceholderImage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .clipped()
             }
         }
         .frame(height: 400)
         .onAppear {
             DispatchQueue.main.async {
-                imageLoader.fetch()
+                imageLoader.load()
             }
         }
     }

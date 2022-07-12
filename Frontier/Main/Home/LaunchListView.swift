@@ -13,7 +13,7 @@ struct LaunchListView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(spacing: 12) {
                 ForEach(launches) { launch in
                     NavigationLink {
                         LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: launch))
@@ -21,7 +21,7 @@ struct LaunchListView: View {
                         LaunchRowView(launch: launch)
                     }
                 }
-            }.padding(.horizontal, 8)
+            }.padding(.horizontal, 16)
         }
     }
 }

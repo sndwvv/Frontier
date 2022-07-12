@@ -11,31 +11,36 @@ struct ImageLoadingView: View {
     
     @StateObject var imageLoader: ImageLoader
     
-    init(url: String?) {
+    init(url: String) {
         self._imageLoader = StateObject(wrappedValue: ImageLoader(url: url))
     }
     
     var body: some View {
-        Group {
-            if imageLoader.image != nil {
-                Image(uiImage: imageLoader.image!)
+        VStack {
+            switch imageLoader.state {
+            case .loading:
+                ProgressView()
+            case .error:
+                Image("PlaceholderImage")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .clipped()
-            } else if imageLoader.errorMessage != nil {
-                Text(imageLoader.errorMessage!)
-                    .foregroundColor(Color.pink)
-            } else {
-                ProgressView()
+            case .loaded(let image):
+                Image(uiImage: image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .clipped()
             }
-        }.onAppear {
-            imageLoader.fetch()
+        }
+        .onAppear {
+            imageLoader.load()
         }
     }
+    
 }
 
 struct ImageLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        ImageLoadingView(url: Article.example().imageUrl)
+        ImageLoadingView(url: Article.example().imageUrl ?? "")
     }
 }

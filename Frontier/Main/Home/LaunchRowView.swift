@@ -13,7 +13,7 @@ struct LaunchRowView: View {
     
     var body: some View {
         HStack {
-            ImageLoadingView(url: launch.image)
+            ImageLoadingView(url: launch.image ?? "")
                 .frame(width: 100, height: 100, alignment: .center)
                 .cornerRadius(10)
                 .clipped()

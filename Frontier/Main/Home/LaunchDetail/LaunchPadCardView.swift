@@ -24,7 +24,7 @@ struct LaunchPadCardView: View {
                 .foregroundColor(Color.primaryText)
                 .frame(maxWidth: .infinity, alignment: .topLeading)
                 .padding(.horizontal, 16)
-            ImageLoadingView(url: pad.mapImage)
+            ImageLoadingView(url: pad.mapImage ?? "")
                 .frame(height: 200)
                 .frame(maxWidth: .infinity)
                 .clipped()

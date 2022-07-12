@@ -14,8 +14,8 @@ struct NewsRowView: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            if article.imageUrl != nil {
-                ImageLoadingView(url: article.imageUrl)
+            if let imageUrl = article.imageUrl {
+                ImageLoadingView(url: imageUrl)
                     .aspectRatio(contentMode: .fill)
                     .frame(width: imageLength)
                     .frame(height: imageLength)
