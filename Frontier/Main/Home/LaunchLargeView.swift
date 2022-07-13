@@ -13,42 +13,51 @@ struct LaunchLargeView: View {
 
     var body: some View {
         VStack(spacing: 4) {
-            ZStack(alignment: .bottomLeading) {
-                if let imageUrl = launch.image {
-                    ImageLoadingView(url: imageUrl)
-                        .frame(minWidth: 350, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .center)
-                        .clipped()
-                        .cornerRadius(10)
-                    Text(launch.name ?? "")
-                        .foregroundColor(Color.white)
-                        .font(.title).bold()
-                        .multilineTextAlignment(.center)
-                        .padding(8)
-                        .frame(maxWidth: .infinity, maxHeight: 100, alignment: .bottom)
-                        .background(
-                            LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
-                                .cornerRadius(10)
-                        )
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-            .padding()
-            .clipped()
-            
-            if let launchDate = launch.net {
-                LaunchCountdownView(launchDate: launchDate)
-                    .frame(maxWidth: 300)
-                    .frame(height: 80)
-            }
-            
-            Text(launch.status?.name ?? "")
-                .font(.headline)
-                .foregroundColor(Color.primaryText)
-                .frame(minWidth: 350, maxWidth: .infinity)
-                .padding()
+            imageAndTitleHeaderView
+            countdownView
+            statusView
             Spacer()
         }
     }
+    
+    private var imageAndTitleHeaderView: some View {
+        ZStack(alignment: .bottomLeading) {
+            if let imageUrl = launch.image {
+                ImageLoadingView(url: imageUrl)
+                    .frame(minWidth: 350, maxWidth: .infinity, minHeight: 100, maxHeight: .infinity, alignment: .center)
+                    .clipped()
+                    .cornerRadius(10)
+                Text(launch.name ?? "")
+                    .foregroundColor(Color.white)
+                    .font(.title).bold()
+                    .multilineTextAlignment(.center)
+                    .padding(8)
+                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .bottom)
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: [.clear, .black]), startPoint: .top, endPoint: .bottom)
+                            .cornerRadius(10)
+                    )
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+        .padding()
+        .clipped()
+    }
+    
+    private var countdownView: some View {
+        LaunchCountdownView(launchDate: launch.net ?? Date().ISO8601Format())
+            .frame(maxWidth: 300)
+            .frame(height: 80)
+    }
+    
+    private var statusView: some View {
+        Text(launch.status?.name ?? "")
+            .font(.headline)
+            .foregroundColor(Color.primaryText)
+            .frame(minWidth: 350, maxWidth: .infinity)
+            .padding()
+    }
+    
 }
 
 struct LaunchLargeView_Previews: PreviewProvider {
@@ -56,10 +65,8 @@ struct LaunchLargeView_Previews: PreviewProvider {
         Group {
             LaunchLargeView(launch: Launch.example())
                 .previewDevice("iPhone 12")
-                .previewInterfaceOrientation(.portrait)
             LaunchLargeView(launch: Launch.example())
                 .previewDevice("iPad (9th generation)")
-                .previewInterfaceOrientation(.portraitUpsideDown)
             LaunchLargeView(launch: Launch.example())
                 .previewDevice("iPhone SE (3rd generation)")
         }

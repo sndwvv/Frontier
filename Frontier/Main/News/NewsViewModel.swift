@@ -1,5 +1,5 @@
 //
-//  NewsArticleFetcher.swift
+//  NewsViewModel.swift
 //  Frontier
 //
 //  Created by Songyee Park on 2022/06/22.

@@ -12,45 +12,52 @@ struct NewsRowView: View {
     let article: Article
     let imageLength: CGFloat = 120
     
+    // MARK: Main Content
+    
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            if let imageUrl = article.imageUrl {
-                ImageLoadingView(url: imageUrl)
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: imageLength)
-                    .frame(height: imageLength)
-                    .clipped()
-                    .cornerRadius(10)
-            } else {
-                Color.gray
-                    .frame(width: imageLength)
-                    .frame(maxHeight: imageLength)
-            }
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    TagView(text: article.newsSite ?? "", backgroundColor: .blue)
-                }
-                Text(article.title ?? "")
-                    .font(.headline)
-                    .foregroundColor(Color.primaryText)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(3)
-                if let publishedAt = article.publishedAt {
-                    Text(publishedAt.timeAgoDisplay())
-                        .font(.caption)
-                        .foregroundColor(Color.secondaryText)
-                }
-            }
-            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-            .frame(
-                  minWidth: 0,
-                  maxWidth: .infinity,
-                  minHeight: 0,
-                  maxHeight: .infinity,
-                  alignment: .topLeading
-                )
+            imageView
+            infoView
         }
     }
+    
+    // MARK: Subviews
+    
+    private var imageView: some View {
+        ImageLoadingView(url: article.imageUrl)
+            .aspectRatio(contentMode: .fill)
+            .frame(width: imageLength)
+            .frame(height: imageLength)
+            .clipped()
+            .cornerRadius(10)
+    }
+    
+    private var infoView: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                TagView(text: article.newsSite ?? "", backgroundColor: .blue)
+            }
+            Text(article.title ?? "")
+                .font(.headline)
+                .foregroundColor(Color.primaryText)
+                .multilineTextAlignment(.leading)
+                .lineLimit(3)
+            if let publishedAt = article.publishedAt {
+                Text(publishedAt.timeAgoDisplay())
+                    .font(.caption)
+                    .foregroundColor(Color.secondaryText)
+            }
+        }
+        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        .frame(
+              minWidth: 0,
+              maxWidth: .infinity,
+              minHeight: 0,
+              maxHeight: .infinity,
+              alignment: .topLeading
+            )
+    }
+    
 }
 
 struct NewsRowView_Previews: PreviewProvider {

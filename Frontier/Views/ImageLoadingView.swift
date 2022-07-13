@@ -11,7 +11,7 @@ struct ImageLoadingView: View {
     
     @StateObject var imageLoader: ImageLoader
     
-    init(url: String) {
+    init(url: String?) {
         self._imageLoader = StateObject(wrappedValue: ImageLoader(url: url))
     }
     
@@ -33,7 +33,9 @@ struct ImageLoadingView: View {
             }
         }
         .onAppear {
-            imageLoader.load()
+            DispatchQueue.main.async {
+                imageLoader.load()
+            }
         }
     }
     

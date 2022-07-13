@@ -10,9 +10,9 @@ import UIKit
 
 class ImageLoader: ObservableObject {
     
-    let url: String
+    let url: String?
 
-    init(url: String) {
+    init(url: String?) {
         self.url = url
     }
     
@@ -25,7 +25,7 @@ class ImageLoader: ObservableObject {
     @Published var state: State = .loading
     
     func load() {
-        guard let fetchURL = URL(string: url) else {
+        guard let url = url, let fetchURL = URL(string: url) else {
             self.state = .error(APIError.badURL.localizedDescription)
             return
         }

@@ -33,13 +33,11 @@ class HomeViewModel: ObservableObject {
                 case .failure(let error):
                     self.state = .error(error.localizedDescription)
                 case .success(let response):
-                    if response.results.isEmpty {
-                        self.state = .empty
+                    if let firstLaunch = response.results.first {
+                        let launchList = Array(response.results.dropFirst())
+                        self.state = .loaded(firstLaunch, launchList)
                     } else {
-                        if let firstLaunch = response.results.first {
-                            let launchList = Array(response.results.dropFirst())
-                            self.state = .loaded(firstLaunch, launchList)
-                        }
+                        self.state = .empty
                     }
                 }
             }
