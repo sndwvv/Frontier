@@ -30,18 +30,18 @@ struct SettingsView: View {
                     Text("Dark Mode")
                 }
                 .onChange(of: darkModeEnabled) { _ in
-                    toggleSystemTheme()
+                    toggleTheme()
                 }
                 Toggle(isOn: $systemThemeEnabled) {
                     Text("System Theme Enabled")
                 }
                 .onChange(of: systemThemeEnabled) { newValue in
-                    toggleSystemTheme()
+                    toggleTheme()
                 }
             }
     }
     
-    private func toggleSystemTheme() {
+    private func toggleTheme() {
         ThemeManager
             .shared
             .handleTheme(
@@ -54,9 +54,16 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(
-            darkModeEnabled: .constant(false),
-            systemThemeEnabled: .constant(false)
-        )
+        Group {
+            SettingsView(
+                darkModeEnabled: .constant(false),
+                systemThemeEnabled: .constant(false)
+            )
+            SettingsView(
+                darkModeEnabled: .constant(true),
+                systemThemeEnabled: .constant(false)
+            )
+            .previewDevice("iPad (9th generation)")
+        }
     }
 }

@@ -13,15 +13,21 @@ struct LaunchRowView: View {
     
     var body: some View {
         HStack {
-            ImageLoadingView(url: launch.image ?? "")
-                .frame(width: 100, height: 100, alignment: .center)
-                .cornerRadius(10)
-                .clipped()
+            imageView
             launchItemLabels
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .padding(.trailing, 8)
         }
-        .frame(height: 100)
+        .frame(height: imageHeight)
+    }
+    
+    var imageHeight: CGFloat = 100
+    
+    // MARK: Subviews
+    
+    private var imageView: some View {
+        ImageLoadingView(url: launch.image ?? "")
+            .frame(width: imageHeight, height: imageHeight, alignment: .center)
+            .cornerRadius(10)
+            .clipped()
     }
     
     private var launchItemLabels: some View {
@@ -43,6 +49,8 @@ struct LaunchRowView: View {
                     .frame(maxWidth: .infinity, alignment: .topLeading)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.trailing, 8)
     }
     
 }

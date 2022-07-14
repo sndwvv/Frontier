@@ -27,7 +27,7 @@ struct NewsView: View {
             }
             .navigationTitle("News")
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
     
 }

@@ -12,9 +12,10 @@ class HomeViewModel: ObservableObject {
     
     let service: LaunchListAPIServiceProtocol
     
-    init(service: LaunchListAPIServiceProtocol = APILaunchService()) {
+    init(service: LaunchListAPIServiceProtocol = LaunchAPIService()) {
         self.service = service
         load()
+
     }
     
     enum State {

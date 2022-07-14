@@ -12,7 +12,7 @@ class LaunchDetailFetcher: ObservableObject {
     
     let service: LaunchDetailAPIServiceProtocol
     
-    init(service: LaunchDetailAPIServiceProtocol = APILaunchService(), launch: Launch) {
+    init(service: LaunchDetailAPIServiceProtocol = LaunchAPIService(), launch: Launch) {
         self.service = service
         self.launchDetail = launch
         fetchLaunchDetail()
