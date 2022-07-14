@@ -63,18 +63,24 @@ struct LaunchCountdownView: View {
                     .foregroundColor(.secondaryText)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-        }.onAppear {
-            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-                nowDate = Date()
-                countDown = calculateCountDown(launchDate: launchDate)
-            }
-        }.onDisappear {
+        }
+        .onAppear {
+            setCountDownTimer()
+        }
+        .onDisappear {
             timer?.invalidate()
             timer = nil
         }
     }
     
-    func calculateCountDown(launchDate: String) -> LaunchCountDown {
+    private func setCountDownTimer() {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+            nowDate = Date()
+            countDown = calculateCountDown(launchDate: launchDate)
+        }
+    }
+    
+    private func calculateCountDown(launchDate: String) -> LaunchCountDown {
         let dateFormatter = ISO8601DateFormatter()
         guard let netDate = dateFormatter.date(from: launchDate) else {
             print("date error")

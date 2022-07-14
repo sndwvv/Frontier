@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RootView: View {
+    
+    @AppStorage("darkModeEnabled") private var darkModeEnabled: Bool = false
+    @AppStorage("systemThemeEnabled") private var systemThemeEnabled: Bool = false
+    
     var body: some View {
         TabView {
             HomeView()
@@ -18,10 +22,21 @@ struct RootView: View {
                 .tabItem {
                     Label("News", systemImage: "newspaper")
                 }
-            SettingsView()
-                .tabItem {
-                    Label("Settings", systemImage: "gearshape")
-                }
+            SettingsView(
+                darkModeEnabled: $darkModeEnabled,
+                systemThemeEnabled: $systemThemeEnabled
+            )
+            .tabItem {
+                Label("Settings", systemImage: "gearshape")
+            }
+        }
+        .onAppear {
+            ThemeManager
+                .shared
+                .handleTheme(
+                    darkMode: darkModeEnabled,
+                    system: systemThemeEnabled
+                )
         }
     }
 }
