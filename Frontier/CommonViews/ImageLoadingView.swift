@@ -33,9 +33,7 @@ struct ImageLoadingView: View {
             }
         }
         .onAppear {
-            DispatchQueue.main.async {
-                imageLoader.load()
-            }
+            imageLoader.load()
         }
     }
     

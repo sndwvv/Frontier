@@ -14,11 +14,11 @@ struct LaunchDetailView: View {
     var body: some View {
         ScrollView {
             headerView
+            videoView
             cardViews
-                .padding(.horizontal, 16)
         }
         .background(Color.mainBackground)
-        .task {
+        .onAppear {
             detailFetcher.fetchLaunchDetail()
         }
     }
@@ -37,6 +37,20 @@ struct LaunchDetailView: View {
                     .padding(.horizontal, 16)
                     .background(Color.mainBackground)
                     .cornerRadius(20, corners: [.topLeft, .topRight])
+            }
+        }
+    }
+    
+    private var videoView: some View {
+        VStack {
+            // TEST
+//            if let videoURL = Launch.example().vidURLs?.first {
+//                LaunchVideoView(vidURL: videoURL)
+//                    .frame(height: 200)
+//            }
+            if let videoURL = detailFetcher.launchDetail?.vidURLs?.first {
+                LaunchVideoView(vidURL: videoURL)
+                    .frame(height: 200)
             }
         }
     }
@@ -69,6 +83,7 @@ struct LaunchDetailView: View {
                 LaunchPadCardView(pad: pad)
             }
         }
+        .padding(.horizontal, 16)
     }
     
 }
@@ -78,15 +93,10 @@ struct LaunchDetailView_Previews: PreviewProvider {
         Group {
             LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.localJSONExample()))
                 .previewDevice("iPhone 12")
-                .onAppear {
-                    //
-                }
+                
             LaunchDetailView(detailFetcher: LaunchDetailFetcher(launch: Launch.localJSONExample()))
                 .previewDevice("iPad (9th generation)")
                 .preferredColorScheme(.dark)
-                .onAppear {
-                    //
-                }
         }
     }
 }

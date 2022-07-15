@@ -45,6 +45,9 @@ struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             RootView()
+                .onAppear {
+                    ThemeManager.shared.handleTheme(darkMode: false, system: false)
+                }
             RootView()
                 .preferredColorScheme(.dark)
         }

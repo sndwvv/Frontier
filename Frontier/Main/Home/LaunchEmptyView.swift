@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LaunchEmptyView: View {
     
-    let viewModel: HomeViewModel
+    let launchFetcher: HomeLaunchFetcher
     
     var body: some View {
         VStack(spacing: 20) {
@@ -18,7 +18,7 @@ struct LaunchEmptyView: View {
             Text("No Results")
                 .foregroundColor(.primaryText)
             Button {
-                viewModel.load()
+                launchFetcher.load()
             } label: {
                 Text("Try Again")
             }
@@ -28,6 +28,6 @@ struct LaunchEmptyView: View {
 
 struct LaunchEmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchEmptyView(viewModel: HomeViewModel())
+        LaunchEmptyView(launchFetcher: HomeLaunchFetcher())
     }
 }

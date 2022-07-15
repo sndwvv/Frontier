@@ -22,10 +22,13 @@ struct NewsView: View {
                 case .empty:
                     Text("Empty View")
                 case .loaded(let articles):
-                    NewsListView(articles: articles)
+                    NewsListView(viewModel: viewModel, articles: articles)
                 }
             }
             .navigationTitle("News")
+        }
+        .onAppear {
+            viewModel.loadAsync()
         }
         .navigationViewStyle(.stack)
     }
@@ -36,5 +39,8 @@ struct NewsView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = NewsViewModel()
         NewsView(viewModel: viewModel)
+            .onAppear {
+                viewModel.loadAsync()
+            }
     }
 }

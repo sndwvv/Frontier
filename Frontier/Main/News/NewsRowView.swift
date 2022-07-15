@@ -41,7 +41,7 @@ struct NewsRowView: View {
                 .font(.headline)
                 .foregroundColor(Color.primaryText)
                 .multilineTextAlignment(.leading)
-                .lineLimit(3)
+                // .lineLimit(3)
             if let publishedAt = article.publishedAt {
                 Text(publishedAt.timeAgoDisplay())
                     .font(.caption)

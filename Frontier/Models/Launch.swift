@@ -24,19 +24,8 @@ struct Launch: Codable, Identifiable {
     let vidURLs: [VidURL]?
 }
 
-struct JSONReader {
-    func readLocalFile(forName name: String) -> Data? {
-        do {
-            if let bundlePath = Bundle.main.path(forResource: name, ofType: "json"),
-               let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-                return jsonData
-            }
-        } catch {
-            print(error)
-        }
-        return nil
-    }
-}
+
+// MARK: Launch Example
 
 extension Launch {
     static func localJSONExample() -> Launch {
@@ -135,8 +124,12 @@ extension Launch {
             ),
             webcastLive: true,
             image: "https://spacelaunchnow-prod-east.nyc3.digitaloceanspaces.com/media/launcher_images/electron_image_20190705175640.jpeg",
-            infoURLs: [],
-            vidURLs: []
+            infoURLs: [
+                InfoURL(priority: 10, title: "SpaceX", description: "SpaceX designs, manufactures and launches advanced rockets and spacecraft. The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.", featureImage: nil, url: "https://www.spacex.com/launches/crs-25/")
+            ],
+            vidURLs: [
+                VidURL(priority: 10, title: "CRS-25 Mission", description: "SpaceX is targeting Thursday, July 14 for Falcon 9’s launch of its 25th Commercial Resupply Services (CRS-25) mission to the International Space Station. Lif...", featureImage: "https://i.ytimg.com/vi/mnowEqqMiFs/maxresdefault_live.jpg", url: "https://www.youtube.com/watch?v=mnowEqqMiFs")
+            ]
         )
     }
 }

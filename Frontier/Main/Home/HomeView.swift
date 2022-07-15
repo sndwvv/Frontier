@@ -9,51 +9,56 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var viewModel = HomeViewModel()
+    @StateObject var launchFetcher = HomeLaunchFetcher()
     
     var body: some View {
         NavigationView {
             VStack {
-                switch viewModel.state {
+                switch launchFetcher.state {
                 case .loading:
                     LaunchLoadingView()
                 case .error(let errorMessage):
-                    LaunchErrorView(viewModel: viewModel, errorMessasge: errorMessage)
+                    LaunchErrorView(launchFetcher: launchFetcher, errorMessasge: errorMessage)
                 case .empty:
-                    LaunchEmptyView(viewModel: viewModel)
+                    LaunchEmptyView(launchFetcher: launchFetcher)
                 case .loaded(let firstLaunch, let launchList):
                     HomeLaunchListView(firstLaunch: firstLaunch, launchList: launchList)
                 }
             }
             .navigationTitle("Upcoming")
          }
-         .navigationViewStyle(.stack)
+        .task {
+            launchFetcher.load()
+        }
+        .navigationViewStyle(.stack)
     }
 
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = HomeViewModel()
+        let launchFetcher = HomeLaunchFetcher()
         Group {
-            HomeView(viewModel: viewModel)
+            HomeView(launchFetcher: launchFetcher)
                 .preferredColorScheme(.light)
                 .previewDevice("iPhone 12")
                 .task {
-                    viewModel.state = .loaded(Launch.example(), [Launch.localJSONExample(), Launch.localJSONExample()])
+                    launchFetcher.loadMock()
                 }
-            HomeView(viewModel: viewModel)
+            /*
+            HomeView(launchFetcher: launchFetcher)
                 .preferredColorScheme(.light)
                 .previewDevice("iPhone 13 mini")
                 .task {
-                    viewModel.state = .empty
+                    launchFetcher.state = .empty
                 }
-            HomeView(viewModel: viewModel)
+            HomeView(launchFetcher: launchFetcher)
                 .preferredColorScheme(.dark)
                 .previewDevice("iPhone SE (3rd generation)")
                 .task {
-                    viewModel.state = .error(APIError.badURL.localizedDescription)
+                    launchFetcher.state = .error(APIError.badURL.localizedDescription)
                 }
+             */
         }
     }
 }

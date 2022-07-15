@@ -15,11 +15,12 @@ class ThemeManager {
     private init() {}
     
     func handleTheme(darkMode: Bool, system: Bool) {
+        let keyWindow = UIApplication.keyWindow
         guard !system else {
-            UIApplication.keyWindow?.overrideUserInterfaceStyle = .unspecified
+            keyWindow?.overrideUserInterfaceStyle = .unspecified
             return
         }
-        UIApplication.keyWindow?.overrideUserInterfaceStyle = darkMode ? .dark : .light
+        keyWindow?.overrideUserInterfaceStyle = darkMode ? .dark : .light
     }
     
 }

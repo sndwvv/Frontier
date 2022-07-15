@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  HomeLaunchFetcher.swift
 //  Frontier
 //
 //  Created by Songyee Park on 2022/06/24.
@@ -8,14 +8,12 @@
 import Foundation
 import Combine
 
-class HomeViewModel: ObservableObject {
+class HomeLaunchFetcher: ObservableObject {
     
     let service: LaunchListAPIServiceProtocol
     
     init(service: LaunchListAPIServiceProtocol = LaunchAPIService()) {
         self.service = service
-        load()
-
     }
     
     enum State {
@@ -41,6 +39,21 @@ class HomeViewModel: ObservableObject {
                         self.state = .empty
                     }
                 }
+            }
+        }
+    }
+    
+    func loadMock() {
+        guard let launches = LaunchSerializer.localJSONExample() else {
+            state = .error("Failed to parse local JSON Example")
+            return
+        }
+        DispatchQueue.main.async {
+            if let first = launches.results.first {
+                let launchList = Array(launches.results.dropFirst())
+                self.state = .loaded(first, launchList)
+            } else {
+                self.state = .empty
             }
         }
     }

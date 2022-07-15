@@ -14,7 +14,6 @@ class NewsViewModel: ObservableObject {
     
     init(service: NewsAPIServiceProtocol = NewsAPIService()) {
         self.service = service
-        load()
     }
     
     enum State {
@@ -47,6 +46,29 @@ class NewsViewModel: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.state = .error(APIError.badURL.localizedDescription)
         })
+    }
+    
+    func loadAsync() {
+        Task {
+            await loadAsyncTest()
+        }
+    }
+    
+    func loadAsyncTest() async {
+        do {
+            let articles = try await APIService.sendRequest(endpoint: NewsEndpoint.latestNews, [Article].self)
+            DispatchQueue.main.async {
+                if articles.isEmpty {
+                    self.state = .empty
+                } else {
+                    self.state = .loaded(articles)
+                }
+            }
+        } catch {
+            DispatchQueue.main.async {
+                self.state = .error(error.localizedDescription)
+            }
+        }
     }
     
 }
