@@ -25,36 +25,58 @@ class FrontierTests: XCTestCase {
     func test_fetch_articles_success() {
         let success = Result<[Article], APIError>.success([Article.example(), Article.exampleTwo()])
         let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: success))
-        let promise = expectation(description: "fetching articles")
+        let promise = expectation(description: "test_fetch_articles_success")
         
-        fetcher.$articles.sink { articles in
-            if articles.count > 0 {
-                promise.fulfill()
+        fetcher.service.fetchLatestNews { result in
+            switch result {
+            case .success(let articles):
+                if articles.count > 0 {
+                    promise.fulfill()
+                } else {
+                    XCTFail()
+                }
+            case .failure:
+                XCTFail()
             }
         }
-        .store(in: &subscriptions)
         wait(for: [promise], timeout: 2)
     }
     
     func test_fetch_articles_error() {
         let failure = Result<[Article], APIError>.failure(.badURL)
         let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: failure))
-        let promise = expectation(description: "show error message")
+        let promise = expectation(description: "test_fetch_articles_error")
         
-        fetcher.$articles.sink { articles in
-            if articles.count > 0 {
+        fetcher.service.fetchLatestNews { result in
+            switch result {
+            case .success:
                 XCTFail()
-            }
-        }
-        .store(in: &subscriptions)
-        
-        fetcher.$errorMessage.sink { message in
-            if message != nil {
+            case .failure:
                 promise.fulfill()
             }
         }
-        .store(in: &subscriptions)
         wait(for: [promise], timeout: 2)
     }
+    
+//    func test_fetch_articles_error() {
+//        let failure = Result<[Article], APIError>.failure(.badURL)
+//        let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: failure))
+//        let promise = expectation(description: "show error message")
+//
+//        fetcher.$articles.sink { articles in
+//            if articles.count > 0 {
+//                XCTFail()
+//            }
+//        }
+//        .store(in: &subscriptions)
+//
+//        fetcher.$errorMessage.sink { message in
+//            if message != nil {
+//                promise.fulfill()
+//            }
+//        }
+//        .store(in: &subscriptions)
+//        wait(for: [promise], timeout: 2)
+//    }
 
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewsView: View {
     
-    @StateObject var viewModel = NewsViewModel()
+    @StateObject var viewModel = NewsArticleFetcher()
     
     var body: some View {
         NavigationView {
@@ -37,7 +37,7 @@ struct NewsView: View {
 
 struct NewsView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = NewsViewModel()
+        let viewModel = NewsArticleFetcher()
         NewsView(viewModel: viewModel)
             .onAppear {
                 viewModel.loadAsync()

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewsListView: View {
     
-    @ObservedObject var viewModel: NewsViewModel
+    @ObservedObject var viewModel: NewsArticleFetcher
     let articles: [Article]
     
     var body: some View {
@@ -48,6 +48,6 @@ struct NewsListView: View {
 
 struct NewsListView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsListView(viewModel: NewsViewModel(), articles: [Article.example(), Article.exampleTwo()])
+        NewsListView(viewModel: NewsArticleFetcher(), articles: [Article.example(), Article.exampleTwo()])
     }
 }

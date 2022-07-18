@@ -1,5 +1,5 @@
 //
-//  NewsViewModel.swift
+//  NewsArticleFetcher.swift
 //  Frontier
 //
 //  Created by Songyee Park on 2022/06/22.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class NewsViewModel: ObservableObject {
+class NewsArticleFetcher: ObservableObject {
     
     let service: NewsAPIServiceProtocol
     

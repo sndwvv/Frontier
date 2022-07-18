@@ -18,6 +18,10 @@ struct RootView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+            EventsView()
+                .tabItem {
+                    Label("Events", systemImage: "calendar")
+                }
             NewsView()
                 .tabItem {
                     Label("News", systemImage: "newspaper")

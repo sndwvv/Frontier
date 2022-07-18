@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewsErrorView: View {
     
-    @ObservedObject var viewModel: NewsViewModel
+    @ObservedObject var viewModel: NewsArticleFetcher
     let errorMessage: String
     
     var body: some View {
@@ -29,6 +29,6 @@ struct NewsErrorView: View {
 
 struct NewsErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsErrorView(viewModel: NewsViewModel(), errorMessage: "Something went wrong.")
+        NewsErrorView(viewModel: NewsArticleFetcher(), errorMessage: "Something went wrong.")
     }
 }
