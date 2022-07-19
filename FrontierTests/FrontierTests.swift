@@ -58,25 +58,41 @@ class FrontierTests: XCTestCase {
         wait(for: [promise], timeout: 2)
     }
     
-//    func test_fetch_articles_error() {
-//        let failure = Result<[Article], APIError>.failure(.badURL)
-//        let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: failure))
-//        let promise = expectation(description: "show error message")
-//
-//        fetcher.$articles.sink { articles in
-//            if articles.count > 0 {
-//                XCTFail()
-//            }
-//        }
-//        .store(in: &subscriptions)
-//
-//        fetcher.$errorMessage.sink { message in
-//            if message != nil {
-//                promise.fulfill()
-//            }
-//        }
-//        .store(in: &subscriptions)
-//        wait(for: [promise], timeout: 2)
-//    }
+    func test_fetch_launch_list_success() {
+        let launchList = LaunchSerializer(count: 1, next: nil, previous: nil, results: [Launch.localJSONExample()])
+        let success = Result<LaunchSerializer, APIError>.success(launchList)
+        let fetcher = HomeLaunchFetcher(service: LaunchListAPIMockService(result: success))
+        let promise = expectation(description: "test_fetch_launch_list_success")
+        
+        fetcher.service.fetchUpcomingLaunches { result in
+            switch result {
+            case .failure:
+                XCTFail()
+            case .success(let launchList):
+                if launchList.results.isEmpty {
+                    XCTFail()
+                } else {
+                    promise.fulfill()
+                }
+            }
+        }
+        wait(for: [promise], timeout: 2)
+    }
+    
+    func test_fetch_launch_list_error() {
+        let failure = Result<LaunchSerializer, APIError>.failure(.noData)
+        let fetcher = HomeLaunchFetcher(service: LaunchListAPIMockService(result: failure))
+        let promise = expectation(description: "test_fetch_launch_list_error")
+        
+        fetcher.service.fetchUpcomingLaunches { result in
+            switch result {
+            case .failure:
+                promise.fulfill()
+            case .success:
+                XCTFail()
+            }
+        }
+        wait(for: [promise], timeout: 2)
+    }
 
 }
