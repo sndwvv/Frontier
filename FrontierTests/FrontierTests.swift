@@ -94,5 +94,62 @@ class FrontierTests: XCTestCase {
         }
         wait(for: [promise], timeout: 2)
     }
+    
+    func test_launch_countdown_service_success() {
+        let launchDate = "2032-01-30T09:50:00Z"
+        let service = LaunchCountDownService(launchDate: launchDate)
+        let promise = expectation(description: "Expected to PASS TEST: LaunchCountDownService returns a Timer object.")
+        
+        service.setTimer()
+        _ = service.createCountDown(launchDate: launchDate)
+        
+        service.$timer.sink { timer in
+            if timer == nil {
+                XCTFail()
+            } else {
+                promise.fulfill()
+            }
+        }
+        .store(in: &subscriptions)
+        wait(for: [promise], timeout: 2)
+    }
+    
+    func test_launch_countdown_service_date_passed_error() {
+        let launchDate = "2011-01-30T09:50:00Z"
+        let service = LaunchCountDownService(launchDate: launchDate)
+        let promise = expectation(description: "Expected to FAIL TEST: LaunchCountDownService timer is NIL.")
+        
+        service.setTimer()
+        _ = service.createCountDown(launchDate: launchDate)
+        
+        service.$timer.sink { timer in
+            if timer == nil {
+                promise.fulfill()
+            } else {
+                XCTFail()
+            }
+        }
+        .store(in: &subscriptions)
+        wait(for: [promise], timeout: 2)
+    }
+    
+    func test_launch_countdown_service_bad_date_error() {
+        let launchDate = "2011/01/30"
+        let service = LaunchCountDownService(launchDate: launchDate)
+        let promise = expectation(description: "Expected to FAIL TEST: LaunchCountDownService timer is NIL.")
+        
+        service.setTimer()
+        _ = service.createCountDown(launchDate: launchDate)
+        
+        service.$timer.sink { timer in
+            if timer == nil {
+                promise.fulfill()
+            } else {
+                XCTFail()
+            }
+        }
+        .store(in: &subscriptions)
+        wait(for: [promise], timeout: 2)
+    }
 
 }

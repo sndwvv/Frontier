@@ -80,6 +80,8 @@
 		1EE3035628759C1B007AF99C /* InfoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035528759C1B007AF99C /* InfoURL.swift */; };
 		1EE3035828759C31007AF99C /* VidURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035728759C31007AF99C /* VidURL.swift */; };
 		1EE303602876CBB8007AF99C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035F2876CBB8007AF99C /* RootView.swift */; };
+		1EFB464C2886F98D00BD1AFE /* LaunchCountDownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB464B2886F98D00BD1AFE /* LaunchCountDownService.swift */; };
+		1EFB464E2886FAB300BD1AFE /* LaunchCountdownView_V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB464D2886FAB300BD1AFE /* LaunchCountdownView_V2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +179,8 @@
 		1EE3035528759C1B007AF99C /* InfoURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoURL.swift; sourceTree = "<group>"; };
 		1EE3035728759C31007AF99C /* VidURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidURL.swift; sourceTree = "<group>"; };
 		1EE3035F2876CBB8007AF99C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		1EFB464B2886F98D00BD1AFE /* LaunchCountDownService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountDownService.swift; sourceTree = "<group>"; };
+		1EFB464D2886FAB300BD1AFE /* LaunchCountdownView_V2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView_V2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,8 @@
 				1EA5B99428815433005A9954 /* LaunchVideoView.swift */,
 				1EACE101287566FB0051B61D /* LaunchDetailFetcher.swift */,
 				1E40DDD0286C17B60038039F /* LaunchCountdownView.swift */,
+				1EFB464D2886FAB300BD1AFE /* LaunchCountdownView_V2.swift */,
+				1EFB464B2886F98D00BD1AFE /* LaunchCountDownService.swift */,
 				1E40DDCA286C0C2B0038039F /* LaunchStatusCardView.swift */,
 				1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */,
 				1EAFDF70286AAE7F00998ADA /* LaunchRocketCardView.swift */,
@@ -604,6 +610,7 @@
 				1E40DDC9286BFDC90038039F /* Color+Ext.swift in Sources */,
 				1EA5B99528815433005A9954 /* LaunchVideoView.swift in Sources */,
 				1ED3EEAE2862D5E800B4FC75 /* NewsErrorView.swift in Sources */,
+				1EFB464E2886FAB300BD1AFE /* LaunchCountdownView_V2.swift in Sources */,
 				1EAFDF77286ABFC000998ADA /* TagView.swift in Sources */,
 				1EE3035428759BF6007AF99C /* Pad.swift in Sources */,
 				1EA5B98628806F42005A9954 /* LaunchAPIService.swift in Sources */,
@@ -638,6 +645,7 @@
 				1EA5B99828850E6C005A9954 /* EventsView.swift in Sources */,
 				1EE3034E28759BB8007AF99C /* LaunchSerializer.swift in Sources */,
 				1E40DDC4286ACF170038039F /* NewsWebView.swift in Sources */,
+				1EFB464C2886F98D00BD1AFE /* LaunchCountDownService.swift in Sources */,
 				1ED3EEB02862D7EC00B4FC75 /* NewsListView.swift in Sources */,
 				1EE303602876CBB8007AF99C /* RootView.swift in Sources */,
 				1EA5B99A28855540005A9954 /* Event.swift in Sources */,

@@ -45,7 +45,7 @@ struct LaunchLargeView: View {
     }
     
     private var countdownView: some View {
-        LaunchCountdownView(launchDate: launch.net ?? Date().ISO8601Format())
+        LaunchCountdownView_V2(service: LaunchCountDownService(launchDate: launch.net ?? Date().ISO8601Format()))
             .frame(maxWidth: 300)
             .frame(height: 80)
     }
