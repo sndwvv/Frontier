@@ -18,6 +18,7 @@ struct LaunchLargeView: View {
             statusView
             Spacer()
         }
+        .background(Color.mainBackground)
     }
     
     private var imageAndTitleHeaderView: some View {
@@ -45,7 +46,7 @@ struct LaunchLargeView: View {
     }
     
     private var countdownView: some View {
-        LaunchCountdownView_V2(service: LaunchCountDownService(launchDate: launch.net ?? Date().ISO8601Format()))
+        LaunchCountdownView(service: LaunchCountDownService(launchDate: launch.net ?? Date().ISOFormattedString()))
             .frame(maxWidth: 300)
             .frame(height: 80)
     }

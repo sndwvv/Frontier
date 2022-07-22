@@ -18,11 +18,11 @@ struct NewsListView: View {
             footerView
         }
         .listStyle(.plain)
-        .task {
+        .onAppear {
             // print("cache size: \(URLCache.shared.memoryCapacity / 1024)KB")
             URLCache.shared.memoryCapacity = 1024 * 1024 * 512 // 0.5 gb
         }
-        .background(Color.mainBackground)
+        // .background(Color.mainBackground)
     }
     
     private var newsList: some View {

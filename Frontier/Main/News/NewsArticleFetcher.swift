@@ -48,6 +48,7 @@ class NewsArticleFetcher: ObservableObject {
         })
     }
     
+    /*
     func loadAsync() {
         Task {
             await loadAsyncTest()
@@ -70,5 +71,5 @@ class NewsArticleFetcher: ObservableObject {
             }
         }
     }
-    
+    */
 }

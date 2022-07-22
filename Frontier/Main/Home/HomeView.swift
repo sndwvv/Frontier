@@ -27,10 +27,9 @@ struct HomeView: View {
             }
             .navigationTitle("Upcoming")
          }
-        .task {
+        .onAppear {
             launchFetcher.load()
         }
-        .navigationViewStyle(.stack)
     }
 
 }
@@ -40,9 +39,9 @@ struct HomeView_Previews: PreviewProvider {
         let launchFetcher = HomeLaunchFetcher()
         Group {
             HomeView(launchFetcher: launchFetcher)
-                .preferredColorScheme(.light)
+                .preferredColorScheme(.dark)
                 .previewDevice("iPhone 12")
-                .task {
+                .onAppear {
                     launchFetcher.loadMock()
                 }
             /*

@@ -25,7 +25,7 @@ class FrontierTests: XCTestCase {
     func test_fetch_articles_success() {
         let success = Result<[Article], APIError>.success([Article.example(), Article.exampleTwo()])
         let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: success))
-        let promise = expectation(description: "test_fetch_articles_success")
+        let promise = expectation(description: "Expected to PASS TEST: NewsArticleFetcher returns multiple Article objects.")
         
         fetcher.service.fetchLatestNews { result in
             switch result {
@@ -45,7 +45,7 @@ class FrontierTests: XCTestCase {
     func test_fetch_articles_error() {
         let failure = Result<[Article], APIError>.failure(.badURL)
         let fetcher = NewsArticleFetcher(service: NewsAPIMockService(result: failure))
-        let promise = expectation(description: "test_fetch_articles_error")
+        let promise = expectation(description: "Expected to FAIL TEST: NewsArticleFetcher returns an APIError.")
         
         fetcher.service.fetchLatestNews { result in
             switch result {
@@ -62,7 +62,7 @@ class FrontierTests: XCTestCase {
         let launchList = LaunchSerializer(count: 1, next: nil, previous: nil, results: [Launch.localJSONExample()])
         let success = Result<LaunchSerializer, APIError>.success(launchList)
         let fetcher = HomeLaunchFetcher(service: LaunchListAPIMockService(result: success))
-        let promise = expectation(description: "test_fetch_launch_list_success")
+        let promise = expectation(description: "Expected to PASS TEST: HomeLaunchFetcher returns multiple Launch objects.")
         
         fetcher.service.fetchUpcomingLaunches { result in
             switch result {
@@ -82,7 +82,7 @@ class FrontierTests: XCTestCase {
     func test_fetch_launch_list_error() {
         let failure = Result<LaunchSerializer, APIError>.failure(.noData)
         let fetcher = HomeLaunchFetcher(service: LaunchListAPIMockService(result: failure))
-        let promise = expectation(description: "test_fetch_launch_list_error")
+        let promise = expectation(description: "Expected to FAIL TEST: HomeLaunchFetcher returns an APIError.")
         
         fetcher.service.fetchUpcomingLaunches { result in
             switch result {

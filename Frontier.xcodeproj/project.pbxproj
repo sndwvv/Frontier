@@ -17,7 +17,6 @@
 		1E40DDCB286C0C2B0038039F /* LaunchStatusCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDCA286C0C2B0038039F /* LaunchStatusCardView.swift */; };
 		1E40DDCD286C0E710038039F /* CardViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDCC286C0E710038039F /* CardViewModifier.swift */; };
 		1E40DDCF286C0EB20038039F /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDCE286C0EB20038039F /* View+Ext.swift */; };
-		1E40DDD1286C17B60038039F /* LaunchCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD0286C17B60038039F /* LaunchCountdownView.swift */; };
 		1E40DDD3286C468D0038039F /* LaunchLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD2286C468D0038039F /* LaunchLoadingView.swift */; };
 		1E40DDD8286C76A90038039F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDD7286C76A90038039F /* SettingsView.swift */; };
 		1E40DDDC286D8E110038039F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40DDDB286D8E110038039F /* WebViewController.swift */; };
@@ -32,10 +31,6 @@
 		1EA5B98628806F42005A9954 /* LaunchAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B98528806F42005A9954 /* LaunchAPIService.swift */; };
 		1EA5B98828811AF0005A9954 /* UpcomingLaunches.json in Resources */ = {isa = PBXBuildFile; fileRef = 1EA5B98728811AF0005A9954 /* UpcomingLaunches.json */; };
 		1EA5B98A28811B2B005A9954 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B98928811B2B005A9954 /* JSONReader.swift */; };
-		1EA5B98C28814A14005A9954 /* RefreshableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B98B28814A14005A9954 /* RefreshableScrollView.swift */; };
-		1EA5B98F28814A54005A9954 /* RefreshableScrollViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B98E28814A54005A9954 /* RefreshableScrollViewModel.swift */; };
-		1EA5B99128814A86005A9954 /* FramePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B99028814A86005A9954 /* FramePreferenceKey.swift */; };
-		1EA5B99328814AA4005A9954 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B99228814AA4005A9954 /* ActivityIndicator.swift */; };
 		1EA5B99528815433005A9954 /* LaunchVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B99428815433005A9954 /* LaunchVideoView.swift */; };
 		1EA5B99828850E6C005A9954 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B99728850E6C005A9954 /* EventsView.swift */; };
 		1EA5B99A28855540005A9954 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5B99928855540005A9954 /* Event.swift */; };
@@ -81,7 +76,8 @@
 		1EE3035828759C31007AF99C /* VidURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035728759C31007AF99C /* VidURL.swift */; };
 		1EE303602876CBB8007AF99C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE3035F2876CBB8007AF99C /* RootView.swift */; };
 		1EFB464C2886F98D00BD1AFE /* LaunchCountDownService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB464B2886F98D00BD1AFE /* LaunchCountDownService.swift */; };
-		1EFB464E2886FAB300BD1AFE /* LaunchCountdownView_V2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB464D2886FAB300BD1AFE /* LaunchCountdownView_V2.swift */; };
+		1EFB464E2886FAB300BD1AFE /* LaunchCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB464D2886FAB300BD1AFE /* LaunchCountdownView.swift */; };
+		1EFB4650288A804C00BD1AFE /* LaunchCountdownTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB464F288A804C00BD1AFE /* LaunchCountdownTimeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +108,6 @@
 		1E40DDCA286C0C2B0038039F /* LaunchStatusCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchStatusCardView.swift; sourceTree = "<group>"; };
 		1E40DDCC286C0E710038039F /* CardViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModifier.swift; sourceTree = "<group>"; };
 		1E40DDCE286C0EB20038039F /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
-		1E40DDD0286C17B60038039F /* LaunchCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView.swift; sourceTree = "<group>"; };
 		1E40DDD2286C468D0038039F /* LaunchLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchLoadingView.swift; sourceTree = "<group>"; };
 		1E40DDD7286C76A90038039F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1E40DDDB286D8E110038039F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -127,10 +122,6 @@
 		1EA5B98528806F42005A9954 /* LaunchAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAPIService.swift; sourceTree = "<group>"; };
 		1EA5B98728811AF0005A9954 /* UpcomingLaunches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UpcomingLaunches.json; sourceTree = "<group>"; };
 		1EA5B98928811B2B005A9954 /* JSONReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
-		1EA5B98B28814A14005A9954 /* RefreshableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollView.swift; sourceTree = "<group>"; };
-		1EA5B98E28814A54005A9954 /* RefreshableScrollViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshableScrollViewModel.swift; sourceTree = "<group>"; };
-		1EA5B99028814A86005A9954 /* FramePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePreferenceKey.swift; sourceTree = "<group>"; };
-		1EA5B99228814AA4005A9954 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1EA5B99428815433005A9954 /* LaunchVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVideoView.swift; sourceTree = "<group>"; };
 		1EA5B99728850E6C005A9954 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
 		1EA5B99928855540005A9954 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -180,7 +171,8 @@
 		1EE3035728759C31007AF99C /* VidURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidURL.swift; sourceTree = "<group>"; };
 		1EE3035F2876CBB8007AF99C /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		1EFB464B2886F98D00BD1AFE /* LaunchCountDownService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountDownService.swift; sourceTree = "<group>"; };
-		1EFB464D2886FAB300BD1AFE /* LaunchCountdownView_V2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView_V2.swift; sourceTree = "<group>"; };
+		1EFB464D2886FAB300BD1AFE /* LaunchCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownView.swift; sourceTree = "<group>"; };
+		1EFB464F288A804C00BD1AFE /* LaunchCountdownTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCountdownTimeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,17 +251,6 @@
 			path = News;
 			sourceTree = "<group>";
 		};
-		1EA5B98D28814A3D005A9954 /* RefreshableScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				1EA5B98B28814A14005A9954 /* RefreshableScrollView.swift */,
-				1EA5B98E28814A54005A9954 /* RefreshableScrollViewModel.swift */,
-				1EA5B99028814A86005A9954 /* FramePreferenceKey.swift */,
-				1EA5B99228814AA4005A9954 /* ActivityIndicator.swift */,
-			);
-			path = RefreshableScrollView;
-			sourceTree = "<group>";
-		};
 		1EA5B99628850E56005A9954 /* Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,8 +266,8 @@
 				1E1218A72865D63F00328484 /* LaunchDetailView.swift */,
 				1EA5B99428815433005A9954 /* LaunchVideoView.swift */,
 				1EACE101287566FB0051B61D /* LaunchDetailFetcher.swift */,
-				1E40DDD0286C17B60038039F /* LaunchCountdownView.swift */,
-				1EFB464D2886FAB300BD1AFE /* LaunchCountdownView_V2.swift */,
+				1EFB464D2886FAB300BD1AFE /* LaunchCountdownView.swift */,
+				1EFB464F288A804C00BD1AFE /* LaunchCountdownTimeView.swift */,
 				1EFB464B2886F98D00BD1AFE /* LaunchCountDownService.swift */,
 				1E40DDCA286C0C2B0038039F /* LaunchStatusCardView.swift */,
 				1E1218AF2869C47900328484 /* LaunchMissionCardView.swift */,
@@ -434,7 +415,6 @@
 		1ED3EEB52862DFA000B4FC75 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
-				1EA5B98D28814A3D005A9954 /* RefreshableScrollView */,
 				1ED3EEB62862DFAE00B4FC75 /* ImageLoadingView.swift */,
 				1EB24CFB2864606400229E9F /* StretchyHeaderImageView.swift */,
 				1EAFDF76286ABFC000998ADA /* TagView.swift */,
@@ -592,7 +572,6 @@
 				1E40DDCD286C0E710038039F /* CardViewModifier.swift in Sources */,
 				1E40DDCB286C0C2B0038039F /* LaunchStatusCardView.swift in Sources */,
 				1EA5B97928805E0D005A9954 /* Endpoint.swift in Sources */,
-				1EA5B99128814A86005A9954 /* FramePreferenceKey.swift in Sources */,
 				1EA5B97B28805E2B005A9954 /* HTTPClient.swift in Sources */,
 				1E1218A62865924300328484 /* LaunchLargeView.swift in Sources */,
 				1EB24D03286575C900229E9F /* HomeLaunchFetcher.swift in Sources */,
@@ -600,17 +579,14 @@
 				1EA5B97F28806CE1005A9954 /* NewsEndpoint.swift in Sources */,
 				1ED3EE932862BE8600B4FC75 /* HomeView.swift in Sources */,
 				1EE3035028759BCE007AF99C /* LaunchStatus.swift in Sources */,
-				1EA5B98C28814A14005A9954 /* RefreshableScrollView.swift in Sources */,
 				1EB24CFC2864606400229E9F /* StretchyHeaderImageView.swift in Sources */,
 				1EAFDF73286AAEB600998ADA /* LaunchPadCardView.swift in Sources */,
 				1E1218AA2865D8A700328484 /* LaunchErrorView.swift in Sources */,
-				1EA5B98F28814A54005A9954 /* RefreshableScrollViewModel.swift in Sources */,
 				1EA5B99C28855554005A9954 /* EventsFetcher.swift in Sources */,
-				1EA5B99328814AA4005A9954 /* ActivityIndicator.swift in Sources */,
 				1E40DDC9286BFDC90038039F /* Color+Ext.swift in Sources */,
 				1EA5B99528815433005A9954 /* LaunchVideoView.swift in Sources */,
 				1ED3EEAE2862D5E800B4FC75 /* NewsErrorView.swift in Sources */,
-				1EFB464E2886FAB300BD1AFE /* LaunchCountdownView_V2.swift in Sources */,
+				1EFB464E2886FAB300BD1AFE /* LaunchCountdownView.swift in Sources */,
 				1EAFDF77286ABFC000998ADA /* TagView.swift in Sources */,
 				1EE3035428759BF6007AF99C /* Pad.swift in Sources */,
 				1EA5B98628806F42005A9954 /* LaunchAPIService.swift in Sources */,
@@ -639,7 +615,6 @@
 				1EA5B98A28811B2B005A9954 /* JSONReader.swift in Sources */,
 				1ED3EEB72862DFAE00B4FC75 /* ImageLoadingView.swift in Sources */,
 				1EE3035628759C1B007AF99C /* InfoURL.swift in Sources */,
-				1E40DDD1286C17B60038039F /* LaunchCountdownView.swift in Sources */,
 				1EAFDF75286AB65D00998ADA /* LaunchServiceCardView.swift in Sources */,
 				1ED3EE582862BB3D00B4FC75 /* FrontierApp.swift in Sources */,
 				1EA5B99828850E6C005A9954 /* EventsView.swift in Sources */,
@@ -648,6 +623,7 @@
 				1EFB464C2886F98D00BD1AFE /* LaunchCountDownService.swift in Sources */,
 				1ED3EEB02862D7EC00B4FC75 /* NewsListView.swift in Sources */,
 				1EE303602876CBB8007AF99C /* RootView.swift in Sources */,
+				1EFB4650288A804C00BD1AFE /* LaunchCountdownTimeView.swift in Sources */,
 				1EA5B99A28855540005A9954 /* Event.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -825,7 +801,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -854,7 +830,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

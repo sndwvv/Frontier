@@ -20,7 +20,7 @@ struct HomeLaunchListView: View {
                 footerView
             }
         }
-        .background(Color.mainBackground)
+        // .background(Color.mainBackground)
     }
     
     private var largeLaunchView: some View {

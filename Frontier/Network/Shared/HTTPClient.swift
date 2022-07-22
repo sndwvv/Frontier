@@ -4,7 +4,7 @@
 //
 //  Created by Songyee Park on 2022/07/14.
 //
-
+/*
 import Foundation
 
 protocol HTTPClient {
@@ -50,3 +50,4 @@ extension HTTPClient {
         }
     }
 }
+*/

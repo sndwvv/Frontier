@@ -50,7 +50,7 @@ struct RootView_Previews: PreviewProvider {
         Group {
             RootView()
                 .onAppear {
-                    ThemeManager.shared.handleTheme(darkMode: false, system: false)
+                    ThemeManager.shared.handleTheme(darkMode: true, system: false)
                 }
             RootView()
                 .preferredColorScheme(.dark)

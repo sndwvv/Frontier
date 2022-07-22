@@ -33,3 +33,17 @@ extension String {
     }
     
 }
+
+
+extension Date {
+    
+    func ISOFormattedString() -> String {
+        if #available(iOS 15.0, *) {
+            return self.ISO8601Format()
+        }
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions.insert(.withFractionalSeconds)
+        return formatter.string(from: self)
+    }
+    
+}

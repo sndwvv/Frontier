@@ -28,7 +28,7 @@ struct NewsView: View {
             .navigationTitle("News")
         }
         .onAppear {
-            viewModel.loadAsync()
+            viewModel.load()
         }
         .navigationViewStyle(.stack)
     }
@@ -40,7 +40,7 @@ struct NewsView_Previews: PreviewProvider {
         let viewModel = NewsArticleFetcher()
         NewsView(viewModel: viewModel)
             .onAppear {
-                viewModel.loadAsync()
+                viewModel.load()
             }
     }
 }

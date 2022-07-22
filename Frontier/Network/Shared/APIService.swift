@@ -56,6 +56,7 @@ struct APIService {
     }
     
     // ASYNC TEST
+    /*
     static func sendRequest<T: Decodable>(endpoint: Endpoint, _ responseModel: T.Type) async throws -> T {
         guard let url = URL(string: endpoint.baseURL + endpoint.path) else {
             throw APIError.badURL
@@ -93,5 +94,6 @@ struct APIService {
             throw APIError.unknown
         }
     }
+     */
     
 }

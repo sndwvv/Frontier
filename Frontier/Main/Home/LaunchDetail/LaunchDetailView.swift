@@ -58,7 +58,7 @@ struct LaunchDetailView: View {
     private var cardViews: some View {
         VStack(spacing: 16) {
             if let launchDate = detailFetcher.launchDetail?.net {
-                LaunchCountdownView(launchDate: launchDate)
+                LaunchCountdownView(service: LaunchCountDownService(launchDate: launchDate))
                     .frame(maxWidth: 300)
                     .frame(height: 80)
             }
