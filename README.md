@@ -12,4 +12,4 @@ Get the latest rocket launch and space news
 * News provided by [SpaceFlight News API](https://github.com/spaceflightnewsapi/spaceflightnewsapi)
 
 ## Purpose
-* Side project to build an app completely in SwiftUI
+* Side project to build an app using SwiftUI and Combine
