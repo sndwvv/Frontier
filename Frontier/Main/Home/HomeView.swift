@@ -44,20 +44,18 @@ struct HomeView_Previews: PreviewProvider {
                 .onAppear {
                     launchFetcher.loadMock()
                 }
-            /*
             HomeView(launchFetcher: launchFetcher)
                 .preferredColorScheme(.light)
                 .previewDevice("iPhone 13 mini")
-                .task {
+                .onAppear {
                     launchFetcher.state = .empty
                 }
             HomeView(launchFetcher: launchFetcher)
                 .preferredColorScheme(.dark)
                 .previewDevice("iPhone SE (3rd generation)")
-                .task {
+                .onAppear {
                     launchFetcher.state = .error(APIError.badURL.localizedDescription)
                 }
-             */
         }
     }
 }
